@@ -53,5 +53,6 @@ configurations {
         exclude group: "io.zipkin.brave", module: "brave"
         exclude group: "io.zipkin.reporter2", module: "zipkin-reporter-brave"
         exclude group: "io.micrometer", module: "micrometer-tracing-bridge-brave"
+        exclude group: "com.alibaba.nacos", module: "logback-adapter"
     }
 }
