@@ -9,14 +9,14 @@ server:
 spring:
   config:
     activate:
-      on-profile: pre
+      on-profile: test
   main:
     allow-circular-references: true
     allow-bean-definition-overriding: true
     banner-mode: off
     register-shutdown-hook: true
   application:
-    name: taotao-cloud-sys
+    name: taotao-cloud-ddd
   cloud:
     circuitbreaker:
       sentinel:
@@ -82,7 +82,7 @@ spring:
       #        system:
       #          nacos:
       #            server-addr: 192.168.10.200:8848
-      #            dataId: ${spring.application.name}-system-rules.json
+      #            dataId: ${spring.application.name}-dddtem-rules.json
       #            namespace: 4c21599b-c836-4f1a-a72f-1260d5474f0f
       #            username: nacos
       #            password: nacos

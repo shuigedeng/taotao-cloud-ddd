@@ -55,8 +55,8 @@
 
 
 dependencies {
-    api project(":taotao-cloud-sys-integration")
-    api project(":taotao-cloud-sys-common")
+    api project(":taotao-cloud-ddd-integration")
+    api project(":taotao-cloud-ddd-common")
 
     api "io.github.shuigedeng:taotao-cloud-starter-facility-alibaba"
     api "io.github.shuigedeng:taotao-cloud-starter-apollo"

@@ -77,7 +77,7 @@ public class TaoTaoCloudSysDDDApplication {
 		new StartupSpringApplication(TaoTaoCloudSysDDDApplication.class)
 			.setTtcBanner()
 			.setTtcProfileIfNotExists("dev")
-			.setTtcApplicationProperty("taotao-cloud-sys")
+			.setTtcApplicationProperty("taotao-cloud-ddd")
 			.setTtcAllowBeanDefinitionOverriding(true)
 			.run(args);
 	}

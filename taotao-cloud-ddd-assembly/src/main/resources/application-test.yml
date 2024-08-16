@@ -422,7 +422,7 @@ seata:
 spring:
   config:
     activate:
-      on-profile: pre
+      on-profile: test
   #  dynamic:
   #    tp:
   #      enabled: true
@@ -603,7 +603,7 @@ spring:
     cloud-platform: kubernetes
     web-application-type: servlet
   application:
-    name: taotao-cloud-sys
+    name: taotao-cloud-ddd
     admin:
       enabled: true
   jackson:
@@ -1028,7 +1028,7 @@ spring:
             type: INLINE
             props:
               algorithm-expression: ds-master-$->{id % 2}
-          tt-sys-user-inline:
+          tt-ddd-user-inline:
             type: INLINE
             props:
               algorithm-expression: tt_sys_user_$->{id % 3}
@@ -1054,7 +1054,7 @@ spring:
             table-strategy:
               standard:
                 sharding-column: id
-                sharding-algorithm-name: tt-sys-user-inline
+                sharding-algorithm-name: tt-ddd-user-inline
   rabbitmq:
     addresses: 192.168.10.200:5672,192.168.10.200:5673,192.168.10.200:5674
     username: guest

@@ -197,20 +197,20 @@ jobs:
           tags: "${{env.TAOTAO_CLOUD_VERSION}}"
           workdir: ${{ github.workspace }}/taotao-cloud-microservice/taotao-cloud-business/taotao-cloud-order/taotao-cloud-order-biz
 
-      - name: Gradle BootJar taotao-cloud-sys
-        if: ${{ contains(github.event.head_commit.message, 'taotao-cloud-sys') }}
-        run: gradle -p taotao-cloud-microservice/taotao-cloud-business/taotao-cloud-sys/taotao-cloud-sys-biz clean bootJar -x test -Pprofile=dev
-      - name: Publish Docker Image taotao-cloud-sys
+      - name: Gradle BootJar taotao-cloud-ddd
+        if: ${{ contains(github.event.head_commit.message, 'taotao-cloud-ddd') }}
+        run: gradle -p taotao-cloud-microservice/taotao-cloud-business/taotao-cloud-ddd/taotao-cloud-ddd-biz clean bootJar -x test -Pprofile=dev
+      - name: Publish Docker Image taotao-cloud-ddd
         uses: elgohr/Publish-Docker-Github-Action@v5
-        if: ${{ contains(github.event.head_commit.message, 'taotao-cloud-sys') }}
+        if: ${{ contains(github.event.head_commit.message, 'taotao-cloud-ddd') }}
         with:
-          name: registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-sys
+          name: registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-ddd
           username: ${{ secrets.TAOTAO_CLOUD_REGISTRY_USERNAME }}
           password: ${{ secrets.TAOTAO_CLOUD_REGISTRY_PASSWORD }}
           registry: registry.cn-hangzhou.aliyuncs.com
           buildoptions: "--compress --force-rm"
           tags: "${{env.TAOTAO_CLOUD_VERSION}}"
-          workdir: ${{ github.workspace }}/taotao-cloud-microservice/taotao-cloud-business/taotao-cloud-sys/taotao-cloud-sys-biz
+          workdir: ${{ github.workspace }}/taotao-cloud-microservice/taotao-cloud-business/taotao-cloud-ddd/taotao-cloud-ddd-biz
 
       - name: Gradle BootJar taotao-cloud-job
         if: ${{ contains(github.event.head_commit.message, 'taotao-cloud-job') }}
