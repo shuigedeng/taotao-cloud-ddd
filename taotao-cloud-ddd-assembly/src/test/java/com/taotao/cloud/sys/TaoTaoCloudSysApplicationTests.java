@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys;
+package com.taotao.cloud.ddd;
 
 import org.springframework.boot.test.context.SpringBootTest;
 
