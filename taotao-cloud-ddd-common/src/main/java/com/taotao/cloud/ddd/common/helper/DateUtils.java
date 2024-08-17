@@ -19,7 +19,7 @@ public enum DateUtils {
 
     private static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd";
     private static final String DEFAULT_DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
-    private static final ZoneId DEFAULT_ZONE_ID = ZoneId.dddtemDefault();
+    private static final ZoneId DEFAULT_ZONE_ID = ZoneId.systemDefault();
     private static final DateTimeFormatter DEFAULT_DATE_FORMATTER = DateTimeFormatter.ofPattern(DEFAULT_DATE_FORMAT);
     private static final DateTimeFormatter DEFAULT_DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern(DEFAULT_DATE_TIME_FORMAT);
     /**

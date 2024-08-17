@@ -17,8 +17,8 @@
 package com.taotao.cloud.ddd.api.feign;
 
 import com.taotao.cloud.common.constant.ServiceName;
-import com.taotao.cloud.ddd.api.feign.fallback.dddLogApiFallback;
-import com.taotao.cloud.ddd.api.feign.request.dddLogApiRequest;
+import com.taotao.cloud.ddd.api.feign.fallback.SysLogApiFallback;
+import com.taotao.cloud.ddd.api.feign.request.SysLogApiRequest;
 import com.taotao.cloud.ddd.api.feign.response.LogsApiResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;

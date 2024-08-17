@@ -15,7 +15,6 @@ import com.taotao.cloud.ddd.domain.dict.service.DictDomainService;
 import com.taotao.cloud.ddd.infrastructure.persistent.dict.dataobject.DictDO;
 import com.taotao.cloud.ddd.infrastructure.persistent.dict.mapper.DictMapper;
 import com.taotao.cloud.ddd.infrastructure.persistent.dict.po.DictPO;
-import jakarta.transaction.dddtemException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

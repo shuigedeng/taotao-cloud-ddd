@@ -17,21 +17,21 @@
 package com.taotao.cloud.ddd.api.feign;
 
 import com.taotao.cloud.common.constant.ServiceName;
-import com.taotao.cloud.ddd.api.feign.fallback.dddLogLoginApiFallback;
-import com.taotao.cloud.ddd.api.feign.request.dddLogLoginApiRequest;
+import com.taotao.cloud.ddd.api.feign.fallback.SysLogLoginApiFallback;
+import com.taotao.cloud.ddd.api.feign.request.SysLogLoginApiRequest;
 import com.taotao.cloud.ddd.api.feign.response.LogsApiResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient(
-        name = ServiceName.TAOTAO_CLOUD_LOG,
-        contextId = "feignDictApi",
-        fallbackFactory = SysLogLoginApiFallback.class)
+	name = ServiceName.TAOTAO_CLOUD_LOG,
+	contextId = "feignDictApi",
+	fallbackFactory = SysLogLoginApiFallback.class)
 public interface SysLogLoginApi {
 
-    @PostMapping
-    // Response save(@RequestBody SysLogLogin sysLogLogin,
-    // @RequestHeader(AuthorizationConstants.FROM) String from);
+	@PostMapping
+		// Response save(@RequestBody SysLogLogin sysLogLogin,
+		// @RequestHeader(AuthorizationConstants.FROM) String from);
 	LogsApiResponse save(@RequestBody SysLogLoginApiRequest sysLogLoginApiRequest);
 }

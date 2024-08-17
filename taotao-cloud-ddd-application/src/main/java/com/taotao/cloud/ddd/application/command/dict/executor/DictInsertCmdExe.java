@@ -2,25 +2,15 @@
 
 package com.taotao.cloud.ddd.application.command.dict.executor;
 
-import com.baomidou.dynamic.datasource.annotation.DS;
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.taotao.cloud.common.exception.BusinessException;
-import com.taotao.cloud.common.model.Result;
-import com.taotao.cloud.ddd.application.adapter.DictAdapter;
 import com.taotao.cloud.ddd.application.command.dict.dto.DictInsertCmd;
-import com.taotao.cloud.ddd.application.command.dict.dto.clientobject.DictCO;
-import com.taotao.cloud.ddd.application.converter.DictConvert;
 import com.taotao.cloud.ddd.domain.dict.service.DictDomainService;
-import com.taotao.cloud.ddd.infrastructure.persistent.dict.dataobject.DictDO;
 import com.taotao.cloud.ddd.infrastructure.persistent.dict.mapper.DictMapper;
-import jakarta.transaction.dddtemException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 
 /**
  * 新增字典执行器.
- *
  */
 @Component
 @RequiredArgsConstructor
@@ -33,6 +23,7 @@ public class DictInsertCmdExe {
 
 	/**
 	 * 执行新增字典.
+	 *
 	 * @param cmd 新增字典参数
 	 * @return 执行新增结果
 	 */
