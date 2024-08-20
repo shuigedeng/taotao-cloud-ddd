@@ -35,7 +35,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @FeignClient(
 	name = ServiceName.TAOTAO_CLOUD_SYS,
-	contextId = "IFeignLogisticsApi",
+	contextId = "LogisticsApi",
 	fallbackFactory = LogisticsApiFallback.class)
 public interface LogisticsApi {
 

@@ -32,8 +32,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class SkuClientProxy {
 
-	@Resource
-	private GoodsSkuApi goodsSkuApi;
+	//@Resource
+	//private GoodsSkuApi goodsSkuApi;
 	@Resource
 	private SkuClientAdapter skuClientAdapter;
 	@Resource
@@ -43,11 +43,11 @@ public class SkuClientProxy {
 
 	// 查询用户
 	public SkuVO getUserInfo(Long  skuId) {
-		GoodsSkuSpecGalleryApiResponse user = goodsSkuApi.getGoodsSkuByIdFromCache(skuId);
+//		GoodsSkuSpecGalleryApiResponse user = goodsSkuApi.getGoodsSkuByIdFromCache(skuId);
 		GoodsQueryRpcResponse goodsQueryResponse = goodsRpcService.queryGoodsByParams(new GoodsQueryRpcRequest());
 
 		GoodsSkuGrpcResponse helloReply = skuGrpcClient.getGoodsSkuByIdFromCache("");
 
-		return skuClientAdapter.convert(user, goodsQueryResponse, helloReply);
+		return skuClientAdapter.convert(null, goodsQueryResponse, helloReply);
 	}
 }

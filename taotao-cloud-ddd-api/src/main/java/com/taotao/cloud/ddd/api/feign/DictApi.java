@@ -16,20 +16,21 @@
 
 package com.taotao.cloud.ddd.api.feign;
 
+import static com.taotao.cloud.common.support.info.ApiVersionEnum.V2022_07;
+import static com.taotao.cloud.common.support.info.ApiVersionEnum.V2022_08;
+
 import com.taotao.cloud.common.constant.ServiceName;
-import com.taotao.cloud.openfeign.annotation.ApiInfo;
-import com.taotao.cloud.openfeign.annotation.ApiInfo.Create;
-import com.taotao.cloud.openfeign.annotation.ApiInfo.Update;
-import com.taotao.cloud.openfeign.annotation.FeignInner;
-import com.taotao.cloud.openfeign.annotation.FeignRetry;
+import com.taotao.cloud.common.support.info.ApiInfo;
+import com.taotao.cloud.common.support.info.Caller;
+import com.taotao.cloud.common.support.info.Create;
+import com.taotao.cloud.common.support.info.Update;
 import com.taotao.cloud.ddd.api.feign.fallback.DictApiFallback;
 import com.taotao.cloud.ddd.api.feign.response.DictApiResponse;
+import com.taotao.cloud.openfeign.annotation.FeignInner;
+import com.taotao.cloud.openfeign.annotation.FeignRetry;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import static com.taotao.cloud.openfeign.annotation.ApiVersionEnum.V2022_07;
-import static com.taotao.cloud.openfeign.annotation.ApiVersionEnum.V2022_08;
 
 
 /**
@@ -39,6 +40,7 @@ import static com.taotao.cloud.openfeign.annotation.ApiVersionEnum.V2022_08;
  * @since 2020/5/2 16:42
  */
 @FeignClient(
+	contextId = "DictApi",
 	name = ServiceName.TAOTAO_CLOUD_SYS,
 	fallbackFactory = DictApiFallback.class)
 public interface DictApi {
@@ -54,9 +56,13 @@ public interface DictApi {
 		create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
 		update = {
 			@Update(version = V2022_07, content = "主要修改了配置信息的接口查询", date = "2022-07-01 17:11:55"),
-			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
+			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-08 15:12:55")
+		},
+		caller = {
+			@Caller(contacts = "张三", desc = "支付系统", sys = "支付系统", use = "调用字典查询获取详情"),
+			@Caller(contacts = "李四", desc = "后台管理-字典管理-添加页面", sys = "后台管理", use = "查询字典")
 		})
-	@FeignRetry(maxAttempt=  6, backoff = @FeignRetry.Backoff(delay = 500L, maxDelay = 20000L, multiplier = 4))
+	@FeignRetry(maxAttempt = 6, backoff = @FeignRetry.Backoff(delay = 500L, maxDelay = 20000L, multiplier = 4))
 	@FeignInner
 	@GetMapping("/sys/feign/dict/code")
 	DictApiResponse findByCode(@RequestParam(value = "code") String code);

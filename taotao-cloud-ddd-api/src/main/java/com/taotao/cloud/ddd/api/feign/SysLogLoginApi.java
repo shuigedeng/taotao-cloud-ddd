@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient(
 	name = ServiceName.TAOTAO_CLOUD_LOG,
-	contextId = "feignDictApi",
+	contextId = "SysLogLoginApi",
 	fallbackFactory = SysLogLoginApiFallback.class)
 public interface SysLogLoginApi {
 

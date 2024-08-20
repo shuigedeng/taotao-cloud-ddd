@@ -151,7 +151,7 @@ plugins {
 
     //smart-doc gradle 插件
     // https://plugins.gradle.org/plugin/com.ly.smart-doc
-    id "com.ly.smart-doc" version "3.0.6"
+    id "com.ly.smart-doc" version "3.0.7-release"
 
     //OWASP 依赖检查插件。
     //https://plugins.gradle.org/plugin/org.owasp.dependencycheck
@@ -323,23 +323,6 @@ allprojects {
 }
 
 
-import org.apache.tools.ant.filters.ReplaceTokens
-
-
-def getProperty(String key, String defaultValue) {
-    def keyValue = findProperty(key) ?: System.getenv(key)
-    if (keyValue != null) {
-        return keyValue;
-    }
-    // 加载根路径自定义配置属性
-    Properties envProps = new Properties()
-    envProps.load(new FileInputStream("${rootProject.projectDir.absolutePath}${File.separator}release.properties"))
-
-    keyValue = envProps.getProperty(key, defaultValue)
-    println("打包profile环境==============" + keyValue)
-    return keyValue
-}
-
 subprojects {
     apply plugin: 'java'
     apply plugin: 'java-library'
@@ -430,69 +413,7 @@ subprojects {
         jvmArgs += enablePreview
     }
 
-    //多项目分环境打包
-    //gradle构建过程中的默认任务processResources，重写
-    //gradle build -x test -Pprofile=dev
-    //gradle -x test clean bootJar -Pprofile=dev
-    processResources {
-        doFirst {
-            //过滤器会将用 @var@ 包裹的变量，替换为指定的值。
-            filter ReplaceTokens, tokens: [activeProfile: getProperty("profile", "dev")]
 
-
-            //${profile}变量
-            //filesMatching("**/*.yml"){
-            //    expand(project.properties)
-            //}
-
-            //inputs.property('version', version)
-
-            //filesMatching("**/version.properties") {
-            //    expand version: version
-            //}
-        }
-    }
-
-    tasks.register('createProperties') {
-        dependsOn processResources
-        doLast {
-            def fileDir = new File("${project.layout.buildDirectory.asFile.get()}/resources/main");
-            if (fileDir.exists() && fileDir.isDirectory()) {
-                def pro = ["application.properties", "bootstrap.properties"]
-                pro.forEach(item -> {
-                    new File("${project.layout.buildDirectory.asFile.get()}/resources/main/$item").withWriter { w ->
-                        def projectProperties = project.properties
-                        Properties p = new Properties()
-                        projectProperties.each { entry ->
-                            p[entry.key.toString()] = entry.value.toString()
-                        }
-
-                        p.store w, null
-                    }
-                })
-            }
-        }
-    }
-
-    classes {
-        dependsOn 'createProperties'
-    }
-
-    task bootJarTest {
-        dependsOn 'clean'
-        doFirst {
-            System.setProperty("profile", "test")
-        }
-        finalizedBy("bootJar")
-    }
-
-    task bootJarProduction {
-        dependsOn 'clean'
-        doFirst {
-            System.setProperty("profile", "prod")
-        }
-        finalizedBy("bootJar")
-    }
 }
 
 

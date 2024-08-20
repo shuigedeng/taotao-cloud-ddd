@@ -26,12 +26,13 @@ import com.taotao.cloud.ddd.integration.goods.grpc.GoodsGrpcClient;
 import com.taotao.cloud.ddd.integration.goods.vo.GoodsVO;
 import jakarta.annotation.Resource;
 import org.openjdk.nashorn.internal.ir.annotations.Reference;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class GoodsClientProxy {
 
-	@Resource
+	@Autowired
 	private GoodsApi goodsApi;
 	@Resource
 	private GoodsClientAdapter userIntegrationAdapter;
@@ -42,10 +43,10 @@ public class GoodsClientProxy {
 
 	// 查询用户
 	public GoodsVO getGoodsVO(Long storeId) {
-		Long goodsNum = goodsApi.countStoreGoodsNum(storeId);
+//		Long goodsNum = goodsApi.countStoreGoodsNum(storeId);
 		GoodsQueryRpcResponse goods = goodsRpcService.queryGoodsByParams(new GoodsQueryRpcRequest());
 		CountStoreGoodsNumGrpcResponse helloReply = goodsGrpcClient.countStoreGoodsNum("sfdasdf");
 
-		return userIntegrationAdapter.convert(goodsNum, goods, helloReply);
+		return userIntegrationAdapter.convert(0L, goods, helloReply);
 	}
 }

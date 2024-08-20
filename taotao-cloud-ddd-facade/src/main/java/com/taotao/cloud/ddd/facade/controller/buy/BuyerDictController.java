@@ -17,6 +17,9 @@
 package com.taotao.cloud.ddd.facade.controller.buy;
 
 import com.taotao.cloud.common.model.Result;
+import com.taotao.cloud.common.utils.log.LogUtils;
+import com.taotao.cloud.goods.api.feign.GoodsApi;
+import com.taotao.cloud.goods.api.feign.GoodsSkuApi;
 import com.taotao.cloud.security.springsecurity.annotation.NotAuth;
 import com.taotao.cloud.ddd.application.service.DeptsService;
 import com.taotao.cloud.ddd.application.service.DictsService;
@@ -26,6 +29,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.sql.SQLIntegrityConstraintViolationException;
 import lombok.AllArgsConstructor;
+import lombok.val;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -51,6 +55,7 @@ public class BuyerDictController {
 	private final DeptsService deptsService;
 	private final DictDomainService dictDomainService;
 	private final DeptDomainService deptDomainService;
+	private final GoodsApi goodsApi;
 
 
 	@NotAuth
@@ -58,6 +63,10 @@ public class BuyerDictController {
 	@Operation(summary = "通过code查询所有字典列表")
 	public Result<Boolean> add(@PathVariable String type)
 		throws SQLIntegrityConstraintViolationException {
+		Long result = goodsApi.countStoreGoodsNum(1L);
+
+		LogUtils.info("调用-商品API---结果：{}", result);
+
 		return Result.success(true);
 	}
 

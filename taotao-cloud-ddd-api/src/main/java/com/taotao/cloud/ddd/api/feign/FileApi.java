@@ -17,13 +17,13 @@
 package com.taotao.cloud.ddd.api.feign;
 
 
-import static com.taotao.cloud.openfeign.annotation.ApiVersionEnum.V2022_07;
-import static com.taotao.cloud.openfeign.annotation.ApiVersionEnum.V2022_08;
+import static com.taotao.cloud.common.support.info.ApiVersionEnum.V2022_07;
+import static com.taotao.cloud.common.support.info.ApiVersionEnum.V2022_08;
 
 import com.taotao.cloud.common.constant.ServiceName;
-import com.taotao.cloud.openfeign.annotation.ApiInfo;
-import com.taotao.cloud.openfeign.annotation.ApiInfo.Create;
-import com.taotao.cloud.openfeign.annotation.ApiInfo.Update;
+import com.taotao.cloud.common.support.info.ApiInfo;
+import com.taotao.cloud.common.support.info.Create;
+import com.taotao.cloud.common.support.info.Update;
 import com.taotao.cloud.ddd.api.feign.fallback.FileApiFallback;
 import com.taotao.cloud.ddd.api.feign.response.FileApiResponse;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -37,24 +37,25 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @since 2020/5/2 16:42
  */
 @FeignClient(
-        name = ServiceName.TAOTAO_CLOUD_FILE,
-        contextId = "feignDictApi",
-        fallbackFactory = FileApiFallback.class)
+	name = ServiceName.TAOTAO_CLOUD_FILE,
+	contextId = "FileApi",
+	fallbackFactory = FileApiFallback.class)
 public interface FileApi {
 
-    /**
-     * 字典列表code查询
-     *
-     * @param code 代码
-     * @return {@link FileApiResponse }
-     * @since 2022-06-29 21:40:21
-     */
-    @ApiInfo(
-            create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
-            update = {
-                @Update(version = V2022_07, content = "主要修改了配置信息的接口查询", date = "2022-07-01 17:11:55"),
-                @Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
-            })
-    @GetMapping("/file/feign/file/code")
-		FileApiResponse findByCode(@RequestParam(value = "code") String code);
+	/**
+	 * 字典列表code查询
+	 *
+	 * @param code 代码
+	 * @return {@link FileApiResponse }
+	 * @since 2022-06-29 21:40:21
+	 */
+	@ApiInfo(
+		create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
+		update = {
+			@Update(version = V2022_07, content = "主要修改了配置信息的接口查询", date = "2022-07-01 17:11:55"),
+			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
+		}
+	)
+	@GetMapping("/file/feign/file/code")
+	FileApiResponse findByCode(@RequestParam(value = "code") String code);
 }
