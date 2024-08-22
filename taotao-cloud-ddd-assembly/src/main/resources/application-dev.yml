@@ -4,13 +4,20 @@ server:
   http2:
     enabled: true
   undertow:
+    #设置每个缓冲区的大小。以下的配置会影响buffer,这些buffer会用于服务器连接的IO操作,有点类似netty的池化内存管理, 每块buffer的空间大小,越小的空间被利用越充分，不要设置太大，以免影响其他应用，合适即可
     buffer-size: 2048 #每块buffer的空间大小,越小的空间被利用越充分，buffer会用于服务器连接的IO操作,类似netty的池化内存管理
+    #是否分配的直接内存(NIO直接分配的堆外内存)
     direct-buffers: true # 是否分配的直接内存
-    #max-http-post-size: -1B # HTTP POST请求最大的大小
+    #设置HTTP POST请求的最大内容大小，以适应可能的文件上传或大批量数据提交。
+    #max-http-post-size: 0  # 不限制大小，或根据实际情况调整
+    #设置连接在不处理请求的情况下闲置的时间。
+    #no-request-timeout: 1800s # 例如，设置为30分钟
     max-cookies: 200 # 允许的最大 cookie 数量
     max-headers: 100 # 允许的最大请求头数量
     threads:
+      #设置IO线程数，负责处理非阻塞的网络IO。通常设置为与CPU核心数相等的值。它们会负责多个连接,不要设置过大，如果过大，启动项目会报错：打开文件数过多
       io: 16 # 设置IO线程数, 它主要执行非阻塞的任务,它们会负责多个连接, 默认设置每个CPU核心一个线程
+      #阻塞任务线程池, 当执行类似servlet请求阻塞IO操作, undertow会从这个线程池中取得线程,它的值设置取决于系统线程执行任务的阻塞系数，默认值是IO线程数*8
       worker: 256 # 阻塞任务线程池, 当执行类似servlet请求阻塞操作, undertow会从这个线程池中取得线程,它的值设置取决于系统的负载
     accesslog:
       dir: ${user.home}/logs/${spring.application.name}/undertow # 日志存放目录
@@ -481,7 +488,7 @@ spring:
           - type: capacity                       # 报警项类型，查看源码 NotifyTypeEnum枚举类
             enabled: true
             threshold: 80                        # 报警阈值
-            platforms: [ ding,wechat,email ]             # 可选配置，不配置默认拿上层platforms配置的所以平台
+            platform-ids: [ ding,wechat,email ]             # 可选配置，不配置默认拿上层platforms配置的所以平台
             interval: 120                        # 报警间隔（单位：s）
       dubboTp: # dubbo 线程池配置
         - threadPoolName: dubboTp#20883            # 名称规则：dubboTp + "#" + 协议端口
@@ -493,7 +500,7 @@ spring:
             - type: capacity                       # 报警项类型，查看源码 NotifyTypeEnum枚举类
               enabled: true
               threshold: 80                        # 报警阈值
-              platforms: [ ding,wechat,email ]             # 可选配置，不配置默认拿上层platforms配置的所以平台
+              platform-ids: [ ding,wechat,email ]             # 可选配置，不配置默认拿上层platforms配置的所以平台
               interval: 120                        # 报警间隔（单位：s）
       rocketMqTp: # rocketmq 线程池配置
         - threadPoolName: group1#topic1            # 名称规则：group + "#" + topic
@@ -504,7 +511,7 @@ spring:
             - type: capacity                       # 报警项类型，查看源码 NotifyTypeEnum枚举类
               enabled: true
               threshold: 80                        # 报警阈值
-              platforms: [ ding,wechat,email ]             # 可选配置，不配置默认拿上层platforms配置的所以平台
+              platform-ids: [ ding,wechat,email ]             # 可选配置，不配置默认拿上层platforms配置的所以平台
               interval: 120                        # 报警间隔（单位：s）
       executors: # 动态线程池配置，都有默认值，采用默认值的可以不配置该项，减少配置量
         - threadPoolName: taotao-cloud-ddd-executor
@@ -528,7 +535,7 @@ spring:
             - type: capacity               # 报警项类型，查看源码 NotifyTypeEnum枚举类
               enabled: true
               threshold: 80                # 报警阈值
-              platforms:
+              platform-ids:
                 - ding
                 - wechat
                 - email
@@ -537,7 +544,7 @@ spring:
             - type: change
               enabled: true
               threshold: 80                # 报警阈值
-              platforms:
+              platform-ids:
                 - ding
                 - wechat
                 - email
@@ -546,7 +553,7 @@ spring:
             - type: liveness
               enabled: true
               threshold: 80                # 报警阈值
-              platforms:
+              platform-ids:
                 - ding
                 - wechat
                 - email
@@ -555,7 +562,7 @@ spring:
             - type: reject
               enabled: true
               threshold: 1                # 报警阈值
-              platforms:
+              platform-ids:
                 - ding
                 - wechat
                 - email
@@ -564,7 +571,7 @@ spring:
             - type: run_timeout
               enabled: true
               threshold: 1                # 报警阈值
-              platforms:
+              platform-ids:
                 - ding
                 - wechat
                 - email
@@ -573,7 +580,7 @@ spring:
             - type: queue_timeout
               enabled: true
               threshold: 1                # 报警阈值
-              platforms:
+              platform-ids:
                 - ding
                 - wechat
                 - email
@@ -601,6 +608,7 @@ spring:
       enabled: true
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
+    locale: zh_CN
     time-zone: GMT+8
   web:
     resources:
