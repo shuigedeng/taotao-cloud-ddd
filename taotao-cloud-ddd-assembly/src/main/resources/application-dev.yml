@@ -1436,6 +1436,9 @@ management:
     sampling:
       probability: 1.0
   observations:
+    annotations:
+      #开启后，Spring Boot会自动为我们配置几个切面类（底层实现通过AOP完成）。
+      enabled: true
     http:
       client:
         requests:

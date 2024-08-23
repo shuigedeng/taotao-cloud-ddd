@@ -18,18 +18,19 @@ package com.taotao.cloud.ddd.facade.controller.buy;
 
 import com.taotao.cloud.common.model.Result;
 import com.taotao.cloud.common.utils.log.LogUtils;
-import com.taotao.cloud.goods.api.feign.GoodsApi;
-import com.taotao.cloud.goods.api.feign.GoodsSkuApi;
-import com.taotao.cloud.security.springsecurity.annotation.NotAuth;
 import com.taotao.cloud.ddd.application.service.DeptsService;
 import com.taotao.cloud.ddd.application.service.DictsService;
 import com.taotao.cloud.ddd.domain.dept.service.DeptDomainService;
 import com.taotao.cloud.ddd.domain.dict.service.DictDomainService;
+import com.taotao.cloud.goods.api.feign.GoodsApi;
+import com.taotao.cloud.security.springsecurity.annotation.NotAuth;
+import io.micrometer.core.annotation.Counted;
+import io.micrometer.core.annotation.Timed;
+import io.micrometer.core.aop.MeterTag;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.sql.SQLIntegrityConstraintViolationException;
 import lombok.AllArgsConstructor;
-import lombok.val;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -57,7 +58,21 @@ public class BuyerDictController {
 	private final DeptDomainService deptDomainService;
 	private final GoodsApi goodsApi;
 
+	//@MeterTag注解标准方法参数，key定义了显示时的名称，expression支持SpEL表达式，这里是获取当前参数name的值。
+	@Timed("MeterDemoController.tag")
+	@GetMapping("/tag")
+	public Object tag(
+		@MeterTag(key = "MeterDemoController#tag.name", expression = "#name") String name) {
+		return "@MeterTag Annotation";
+	}
 
+	//该注解会统计方法调用的执行耗时情况，包括什么类，哪个方法等信息。 通过/prometheus Actuator接口查看
+	//MeterDemoController_pp_seconds_count：调用次数。
+	//MeterDemoController_pp_seconds_sum：总计耗时（总次数时间合计）。
+	//MeterDemoController_pp_seconds_max：最大耗时时长。
+	@Timed("BuyerDictController.pp")
+	//该注解用来统计方法调用成功与失败情况
+	@Counted("BuyerDictController.cc")
 	@NotAuth
 	@GetMapping("/add/{type}")
 	@Operation(summary = "通过code查询所有字典列表")
