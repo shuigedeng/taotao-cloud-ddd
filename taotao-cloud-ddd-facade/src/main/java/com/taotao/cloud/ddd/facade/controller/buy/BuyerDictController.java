@@ -82,7 +82,7 @@ public class BuyerDictController {
 
 		LogUtils.info("调用-商品API---结果：{}", result);
 
-		return Result.success(true);
+		return Result.success(false);
 	}
 
 	@NotAuth
