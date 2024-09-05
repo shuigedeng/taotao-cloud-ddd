@@ -199,7 +199,7 @@ plugins {
 
     //https://plugins.gradle.org/plugin/io.swagger.core.v3.swagger-gradle-plugin
     //https://github.com/swagger-api/swagger-core/tree/master/modules/swagger-gradle-plugin
-    id "io.swagger.core.v3.swagger-gradle-plugin" version "2.2.22"
+    id "io.swagger.core.v3.swagger-gradle-plugin" version "2.2.23"
 
     //id 'org.cyclonedx.bom' version '1.8.2'
 
@@ -367,7 +367,7 @@ subprojects {
         annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructProcessorVersion}"
         //https://github.com/entur/mapstruct-spi-protobuf
         //https://search.maven.org/artifact/no.entur.mapstruct.spi/protobuf-spi-impl
-        annotationProcessor "no.entur.mapstruct.spi:protobuf-spi-impl:1.44"
+        annotationProcessor "no.entur.mapstruct.spi:protobuf-spi-impl:1.45"
 
         annotationProcessor "org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}"
     }
