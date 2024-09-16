@@ -16,8 +16,8 @@
 
 package com.taotao.cloud.ddd.api.feign;
 
-import com.taotao.cloud.common.constant.ServiceName;
-import com.taotao.cloud.common.model.Result;
+import com.taotao.boot.common.constant.ServiceName;
+import com.taotao.boot.common.model.Result;
 import com.taotao.cloud.ddd.api.feign.fallback.LogisticsApiFallback;
 import com.taotao.cloud.ddd.api.feign.response.LogisticsApiResponse;
 import com.taotao.cloud.ddd.api.feign.response.TracesApiResponse;

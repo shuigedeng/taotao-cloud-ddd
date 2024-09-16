@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.ddd.api.feign;
 
-import com.taotao.cloud.common.constant.ServiceName;
+import com.taotao.boot.common.constant.ServiceName;
 import com.taotao.cloud.ddd.api.feign.fallback.RoleApiFallback;
 import com.taotao.cloud.ddd.api.feign.response.RoleQueryApiResponse;
 import java.util.List;

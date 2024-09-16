@@ -16,14 +16,14 @@
 
 package com.taotao.cloud.ddd.facade.grpc;
 
-import static com.taotao.cloud.common.support.info.ApiVersionEnum.V2022_07;
-import static com.taotao.cloud.common.support.info.ApiVersionEnum.V2022_08;
+import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
+import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
 
-import com.taotao.cloud.common.support.info.Caller;
-import com.taotao.cloud.common.support.info.Create;
-import com.taotao.cloud.common.support.info.GrpcInfo;
-import com.taotao.cloud.common.support.info.RpcInfo;
-import com.taotao.cloud.common.support.info.Update;
+import com.taotao.boot.common.support.info.Caller;
+import com.taotao.boot.common.support.info.Create;
+import com.taotao.boot.common.support.info.GrpcInfo;
+import com.taotao.boot.common.support.info.RpcInfo;
+import com.taotao.boot.common.support.info.Update;
 import com.taotao.cloud.ddd.api.grpc.DictGrpcRequest;
 import com.taotao.cloud.ddd.api.grpc.DictGrpcResponse;
 import com.taotao.cloud.ddd.api.grpc.DictGrpcServiceGrpc.DictGrpcServiceImplBase;

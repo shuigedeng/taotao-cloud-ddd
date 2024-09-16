@@ -16,8 +16,8 @@
 
 package com.taotao.cloud.ddd.api.feign.fallback;
 
-import com.taotao.cloud.common.model.BaseSecurityUser;
-import com.taotao.cloud.common.utils.log.LogUtils;
+import com.taotao.boot.common.model.BaseSecurityUser;
+import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.cloud.ddd.api.feign.UserApi;
 import com.taotao.cloud.ddd.api.feign.response.UserQueryApiResponse;
 import org.springframework.cloud.openfeign.FallbackFactory;

@@ -16,8 +16,8 @@
 
 package com.taotao.cloud.ddd.api.feign;
 
-import com.taotao.cloud.common.constant.ServiceName;
-import com.taotao.cloud.common.model.Result;
+import com.taotao.boot.common.constant.ServiceName;
+import com.taotao.boot.common.model.Result;
 import com.taotao.cloud.ddd.api.feign.fallback.SettingApiFallback;
 import com.taotao.cloud.ddd.api.feign.response.setting.AlipayPaymentSettingApiResponse;
 import com.taotao.cloud.ddd.api.feign.response.setting.BaseSettingApiResponse;

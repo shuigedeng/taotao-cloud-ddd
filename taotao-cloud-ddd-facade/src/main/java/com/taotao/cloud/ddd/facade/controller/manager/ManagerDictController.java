@@ -17,10 +17,10 @@
 package com.taotao.cloud.ddd.facade.controller.manager;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.taotao.cloud.common.model.BaseQuery;
-import com.taotao.cloud.common.model.Result;
-import com.taotao.cloud.web.base.controller.BaseSuperController;
-import com.taotao.cloud.web.utils.CollectionUtil;
+import com.taotao.boot.common.model.BaseQuery;
+import com.taotao.boot.common.model.Result;
+import com.taotao.boot.web.base.controller.BaseSuperController;
+import com.taotao.boot.web.utils.CollectionUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.Collection;

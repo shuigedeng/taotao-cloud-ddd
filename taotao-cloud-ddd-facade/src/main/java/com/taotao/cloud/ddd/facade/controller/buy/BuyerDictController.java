@@ -16,14 +16,14 @@
 
 package com.taotao.cloud.ddd.facade.controller.buy;
 
-import com.taotao.cloud.common.model.Result;
-import com.taotao.cloud.common.utils.log.LogUtils;
+import com.taotao.boot.common.model.Result;
+import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.cloud.ddd.application.service.DeptsService;
 import com.taotao.cloud.ddd.application.service.DictsService;
 import com.taotao.cloud.ddd.domain.dept.service.DeptDomainService;
 import com.taotao.cloud.ddd.domain.dict.service.DictDomainService;
 import com.taotao.cloud.goods.api.feign.GoodsApi;
-import com.taotao.cloud.security.springsecurity.annotation.NotAuth;
+import com.taotao.boot.security.spring.annotation.NotAuth;
 import io.micrometer.core.annotation.Counted;
 import io.micrometer.core.annotation.Timed;
 import io.micrometer.core.aop.MeterTag;

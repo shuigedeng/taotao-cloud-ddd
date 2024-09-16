@@ -2,7 +2,7 @@
 
 package com.taotao.cloud.ddd.application.command.dict.executor;
 
-import com.taotao.cloud.common.model.Result;
+import com.taotao.boot.common.model.Result;
 import com.taotao.cloud.ddd.application.adapter.DictAdapter;
 import com.taotao.cloud.ddd.application.command.dict.dto.DictDeleteCmd;
 import com.taotao.cloud.ddd.application.converter.DictConvert;
