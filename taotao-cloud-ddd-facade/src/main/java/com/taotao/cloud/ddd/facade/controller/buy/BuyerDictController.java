@@ -31,13 +31,14 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.sql.SQLIntegrityConstraintViolationException;
 import lombok.AllArgsConstructor;
+import org.apache.skywalking.apm.toolkit.trace.TraceContext;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.apache.skywalking.apm.toolkit.trace.TraceContext;
 /**
  * pc端-字典API
  *
@@ -78,9 +79,10 @@ public class BuyerDictController {
 	@Operation(summary = "通过code查询所有字典列表")
 	public Result<Boolean> add(@PathVariable String type)
 		throws SQLIntegrityConstraintViolationException {
-		Long result = goodsApi.countStoreGoodsNum(1L);
+//		Long result = goodsApi.countStoreGoodsNum(1L);
 
-		LogUtils.info("调用-商品API---结果：{}", result);
+		String traceId = TraceContext.traceId();
+		LogUtils.info("调用-商品API---结果：{}", 111);
 
 		return Result.success(false);
 	}
