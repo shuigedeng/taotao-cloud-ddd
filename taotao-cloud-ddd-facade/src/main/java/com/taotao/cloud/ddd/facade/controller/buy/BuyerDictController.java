@@ -18,6 +18,8 @@ package com.taotao.cloud.ddd.facade.controller.buy;
 
 import com.taotao.boot.common.model.Result;
 import com.taotao.boot.common.utils.log.LogUtils;
+import com.taotao.cloud.ddd.application.command.dict.dto.DictGetQry;
+import com.taotao.cloud.ddd.application.command.dict.dto.clientobject.DictCO;
 import com.taotao.cloud.ddd.application.service.DeptsService;
 import com.taotao.cloud.ddd.application.service.DictsService;
 import com.taotao.cloud.ddd.domain.dept.service.DeptDomainService;
@@ -75,11 +77,15 @@ public class BuyerDictController {
 	//该注解用来统计方法调用成功与失败情况
 	@Counted("BuyerDictController.cc")
 	@NotAuth
-	@GetMapping("/add/{type}")
+	@GetMapping("/add/{id}")
 	@Operation(summary = "通过code查询所有字典列表")
-	public Result<Boolean> add(@PathVariable String type)
+	public Result<Boolean> add(@PathVariable(value = "id") Long id)
 		throws SQLIntegrityConstraintViolationException {
 //		Long result = goodsApi.countStoreGoodsNum(1L);
+
+		DictGetQry dictGetQry = new DictGetQry();
+		dictGetQry.setId(id);
+		DictCO dictCO = dictsService.getById(dictGetQry);
 
 		String traceId = TraceContext.traceId();
 		LogUtils.info("调用-商品API---结果：{}", 111);

@@ -98,5 +98,5 @@ public interface UserApi {
 		}
 	)
 	@GetMapping(value = "/sys/feign/info/security")
-	BaseSecurityUser getSysSecurityUser(String nicknameOrUserNameOrPhoneOrEmail);
+	BaseSecurityUser getSysSecurityUser(@RequestParam("nicknameOrUserNameOrPhoneOrEmail")  String nicknameOrUserNameOrPhoneOrEmail);
 }

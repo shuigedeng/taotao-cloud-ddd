@@ -57,10 +57,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  * @version 2022.03
  * @since 2020/11/30 下午3:33
  */
-@MapperScan(basePackages = {"com.taotao.cloud.ddd.infrastructure.persistent.*.mapper"})
-@EnableJpaRepositories(
-	basePackages = {"com.taotao.cloud.ddd.infrastructure.persistent.*.repository.inf"},
-	repositoryFactoryBeanClass = JpaExtendRepositoryFactoryBean.class)
+//@MapperScan(basePackages = {"com.taotao.cloud.ddd.infrastructure.persistent.*.mapper"})
+//@EnableJpaRepositories(
+//	basePackages = {"com.taotao.cloud.ddd.infrastructure.persistent.*.repository.inf"},
+//	repositoryFactoryBeanClass = JpaExtendRepositoryFactoryBean.class)
 //@ComponentScan(basePackages = {
 //	"com.taotao.cloud.ddd.biz.repository.cls"
 //} )
@@ -70,6 +70,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class TaoTaoCloudDDDApplication {
 
 	public static void main(String[] args) {
+		System.setProperty("arthas.outputPath", "${user.home}/logs/taotao-cloud-ddd/arthas-output");
+
 		new StartupSpringApplication(TaoTaoCloudDDDApplication.class)
 			.setTtcBanner()
 			.setTtcProfileIfNotExists("dev")

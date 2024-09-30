@@ -5,8 +5,8 @@ com.taotao.cloud.ddd.api.feign.fallback.MenuApiFallback
 com.taotao.cloud.ddd.api.feign.fallback.QuartzJobApiFallback
 com.taotao.cloud.ddd.api.feign.fallback.RoleApiFallback
 com.taotao.cloud.ddd.api.feign.fallback.SettingApiFallback
-com.taotao.cloud.ddd.api.feign.fallback.sysLogApiFallback
-com.taotao.cloud.ddd.api.feign.fallback.sysLogLoginApiFallback
+com.taotao.cloud.ddd.api.feign.fallback.SysLogApiFallback
+com.taotao.cloud.ddd.api.feign.fallback.SysLogLoginApiFallback
 com.taotao.cloud.ddd.api.feign.fallback.UserApiFallback
 
 

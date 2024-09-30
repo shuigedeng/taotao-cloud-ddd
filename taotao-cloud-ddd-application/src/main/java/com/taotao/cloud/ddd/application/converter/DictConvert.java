@@ -19,6 +19,7 @@ package com.taotao.cloud.ddd.application.converter;
 import com.taotao.cloud.ddd.application.command.dict.dto.DictListQry;
 import com.taotao.cloud.ddd.application.command.dict.dto.clientobject.DictCO;
 import com.taotao.cloud.ddd.domain.dict.entity.DictEntity;
+import com.taotao.cloud.ddd.infrastructure.persistent.dict.po.DictPO;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
@@ -30,7 +31,7 @@ import org.mapstruct.factory.Mappers;
  * @version 2022.04
  * @since 2022-04-28 13:39:18
  */
-@Mapper(unmappedSourcePolicy = ReportingPolicy.IGNORE, unmappedTargetPolicy = ReportingPolicy.IGNORE)
+@Mapper(componentModel = "spring", unmappedSourcePolicy = ReportingPolicy.IGNORE, unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface DictConvert {
 
     /** 实例 */
@@ -39,6 +40,8 @@ public interface DictConvert {
 	DictEntity convert(DictListQry dict);
 
 	DictCO convert(DictEntity dictEntity);
+
+	DictCO convert(DictPO dictEntity);
 
 
 }
