@@ -17,11 +17,8 @@
 package com.taotao.cloud.ddd;
 
 import com.taotao.boot.core.startup.StartupSpringApplication;
-import com.taotao.boot.data.jpa.extend.JpaExtendRepositoryFactoryBean;
 import com.taotao.boot.web.annotation.TaoTaoBootApplication;
 import com.taotao.cloud.bootstrap.annotation.TaoTaoCloudApplication;
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
  * 系统管理中心
@@ -57,26 +54,26 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  * @version 2022.03
  * @since 2020/11/30 下午3:33
  */
-//@MapperScan(basePackages = {"com.taotao.cloud.ddd.infrastructure.persistent.*.mapper"})
-//@EnableJpaRepositories(
+// @MapperScan(basePackages = {"com.taotao.cloud.ddd.infrastructure.persistent.*.mapper"})
+// @EnableJpaRepositories(
 //	basePackages = {"com.taotao.cloud.ddd.infrastructure.persistent.*.repository.inf"},
 //	repositoryFactoryBeanClass = JpaExtendRepositoryFactoryBean.class)
-//@ComponentScan(basePackages = {
+// @ComponentScan(basePackages = {
 //	"com.taotao.cloud.ddd.biz.repository.cls"
-//} )
-//@EnableFeignClients(basePackages = {"com.taotao.cloud.ddd.api.feign","com.taotao.cloud.goods.api.feign"})
+// } )
+// @EnableFeignClients(basePackages = {"com.taotao.cloud.ddd.api.feign","com.taotao.cloud.goods.api.feign"})
 @TaoTaoBootApplication
 @TaoTaoCloudApplication
 public class TaoTaoCloudDDDApplication {
 
-	public static void main(String[] args) {
-		System.setProperty("arthas.outputPath", "${user.home}/logs/taotao-cloud-ddd/arthas-output");
+    public static void main(String[] args) {
+        System.setProperty("arthas.outputPath", "${user.home}/logs/taotao-cloud-ddd/arthas-output");
 
-		new StartupSpringApplication(TaoTaoCloudDDDApplication.class)
-			.setTtcBanner()
-			.setTtcProfileIfNotExists("dev")
-			.setTtcApplicationProperty("taotao-cloud-ddd")
-			.setTtcAllowBeanDefinitionOverriding(true)
-			.run(args);
-	}
+        new StartupSpringApplication(TaoTaoCloudDDDApplication.class)
+                .setTtcBanner()
+                .setTtcProfileIfNotExists("dev")
+                .setTtcApplicationProperty("taotao-cloud-ddd")
+                .setTtcAllowBeanDefinitionOverriding(true)
+                .run(args);
+    }
 }

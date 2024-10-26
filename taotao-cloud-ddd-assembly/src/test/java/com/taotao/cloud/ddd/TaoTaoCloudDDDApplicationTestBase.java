@@ -22,10 +22,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public abstract class TaoTaoCloudDDDApplicationTestBase extends TtcBootTestBase {
 
-	static {
-		System.setProperty("spring.banner.location", "ttc-banner.txt");
-		System.setProperty("spring.profiles.active", "dev");
-		System.setProperty("spring.output.ansi.enabled", "ALWAYS");
-		System.setProperty("arthas.outputPath", "${user.home}/logs/taotao-cloud-ddd/arthas-output");
-	}
+    static {
+        System.setProperty("spring.banner.location", "ttc-banner.txt");
+        System.setProperty("spring.profiles.active", "dev");
+        System.setProperty("spring.output.ansi.enabled", "ALWAYS");
+        System.setProperty("arthas.outputPath", "${user.home}/logs/taotao-cloud-ddd/arthas-output");
+    }
 }

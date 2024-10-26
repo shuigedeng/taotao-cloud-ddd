@@ -16,14 +16,14 @@
 
 package com.taotao.cloud.ddd.integration.goods.proxy;
 
+import com.taotao.cloud.ddd.integration.goods.adapter.GoodsClientAdapter;
+import com.taotao.cloud.ddd.integration.goods.grpc.GoodsGrpcClient;
+import com.taotao.cloud.ddd.integration.goods.vo.GoodsVO;
 import com.taotao.cloud.goods.api.dubbo.GoodsRpcService;
 import com.taotao.cloud.goods.api.dubbo.request.GoodsQueryRpcRequest;
 import com.taotao.cloud.goods.api.dubbo.response.GoodsQueryRpcResponse;
 import com.taotao.cloud.goods.api.feign.GoodsApi;
 import com.taotao.cloud.goods.api.grpc.CountStoreGoodsNumGrpcResponse;
-import com.taotao.cloud.ddd.integration.goods.adapter.GoodsClientAdapter;
-import com.taotao.cloud.ddd.integration.goods.grpc.GoodsGrpcClient;
-import com.taotao.cloud.ddd.integration.goods.vo.GoodsVO;
 import jakarta.annotation.Resource;
 import org.openjdk.nashorn.internal.ir.annotations.Reference;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,21 +32,24 @@ import org.springframework.stereotype.Component;
 @Component
 public class GoodsClientProxy {
 
-	@Autowired
-	private GoodsApi goodsApi;
-	@Resource
-	private GoodsClientAdapter userIntegrationAdapter;
-	@Resource
-	private GoodsGrpcClient goodsGrpcClient;
-	@Reference
-	private GoodsRpcService goodsRpcService;
+    @Autowired
+    private GoodsApi goodsApi;
 
-	// 查询用户
-	public GoodsVO getGoodsVO(Long storeId) {
-//		Long goodsNum = goodsApi.countStoreGoodsNum(storeId);
-		GoodsQueryRpcResponse goods = goodsRpcService.queryGoodsByParams(new GoodsQueryRpcRequest());
-		CountStoreGoodsNumGrpcResponse helloReply = goodsGrpcClient.countStoreGoodsNum("sfdasdf");
+    @Resource
+    private GoodsClientAdapter userIntegrationAdapter;
 
-		return userIntegrationAdapter.convert(0L, goods, helloReply);
-	}
+    @Resource
+    private GoodsGrpcClient goodsGrpcClient;
+
+    @Reference
+    private GoodsRpcService goodsRpcService;
+
+    // 查询用户
+    public GoodsVO getGoodsVO(Long storeId) {
+        //		Long goodsNum = goodsApi.countStoreGoodsNum(storeId);
+        GoodsQueryRpcResponse goods = goodsRpcService.queryGoodsByParams(new GoodsQueryRpcRequest());
+        CountStoreGoodsNumGrpcResponse helloReply = goodsGrpcClient.countStoreGoodsNum("sfdasdf");
+
+        return userIntegrationAdapter.convert(0L, goods, helloReply);
+    }
 }

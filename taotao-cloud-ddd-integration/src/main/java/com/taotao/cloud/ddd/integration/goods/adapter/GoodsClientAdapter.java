@@ -16,16 +16,17 @@
 
 package com.taotao.cloud.ddd.integration.goods.adapter;
 
+import com.taotao.cloud.ddd.integration.goods.vo.GoodsVO;
 import com.taotao.cloud.goods.api.dubbo.response.GoodsQueryRpcResponse;
 import com.taotao.cloud.goods.api.grpc.CountStoreGoodsNumGrpcResponse;
-import com.taotao.cloud.ddd.integration.goods.vo.GoodsVO;
 import org.springframework.stereotype.Component;
 
 @Component
 public class GoodsClientAdapter {
 
-    public GoodsVO convert(Long goodsNum , GoodsQueryRpcResponse goods , CountStoreGoodsNumGrpcResponse countStoreGoodsNumResponse) {
-		GoodsVO goodsVO = new GoodsVO();
+    public GoodsVO convert(
+            Long goodsNum, GoodsQueryRpcResponse goods, CountStoreGoodsNumGrpcResponse countStoreGoodsNumResponse) {
+        GoodsVO goodsVO = new GoodsVO();
 
         return goodsVO;
     }
