@@ -1117,9 +1117,6 @@ spring:
     ansi:
       enabled: always # 自动检测是否支持 ANSI 输出，默认 detect
 
-art:
-  xss:
-    enable: false
 taotao:
   boot:
     dinger:
@@ -1179,13 +1176,10 @@ taotao:
           - MAIL
         receive-emails:
           - 981376577@qq.com
-    alibaba:
-      nacos:
-        enabled: true
-      sentinel:
-        enabled: true
-      seata:
-        enabled: true
+    sentinel:
+      enabled: true
+    seata:
+      enabled: true
     mq:
       enabled: true
       rocketmq:
@@ -1196,8 +1190,6 @@ taotao:
         enabled: true
       pulsar:
         enabled: false
-      stream:
-        enabled: true
     cache:
       jetcache:
         enabled: false
@@ -1318,10 +1310,6 @@ taotao:
         enabled: true
       warn:
         enabled: true
-    feign:
-      enabled: true
-      loadbalancer:
-        enabled: true
     encrypt:
       enabled: false
       filter:
@@ -1370,10 +1358,23 @@ taotao:
       ignore-url:
         - /sys/buyer/dict/test/{code}
         - /sys/manager/dept/tree
-
-mybatis-plus-join:
-  banner: true
-  sub-table-logic: true
+  cloud:
+    alibaba:
+      sentinel:
+        enabled: true
+      seata:
+        enabled: true
+      nacos:
+        enabled: true
+    feign:
+      enabled: true
+      http: false
+      okhttp: true
+      loadbalancer:
+        enabled: true
+        isolation: true
+    stream:
+      enabled: false
 
 mybatis-plus:
   typeAliasesPackage: com.taotao.cloud.ddd.infrastructure.persistent.*.po  #实体扫描 多个package用户逗号或者分号分割
@@ -1581,18 +1582,6 @@ kylin:
     #  max-retries: 3             #最大失败重试次数
     #  namespace: curator/kylin/lock #命名空间
 
-sa-token:
-  token-name: satoken   # token名称 (同时也是cookie名称)
-  token-prefix: Bearer   # token前缀
-  timeout: 2592000   # token有效期，单位秒，-1代表永不过期
-  activity-timeout: -1   # token临时有效期 (指定时间内无操作就视为token过期)，单位秒
-  is-concurrent: true   # 是否允许同一账号并发登录 (为false时新登录挤掉旧登录)
-  is-share: false   # 在多人登录同一账号时，是否共用一个token (为false时每次登录新建一个token)
-  token-style: uuid   # token风格
-  is-log: false   # 是否输出操作日志
-  is-read-cookie: false   # 是否从cookie中读取token
-  is-read-head: true   # 是否从head中读取token
-  jwt-secret-key: asdasdasifhueuiwyurfewbfjsdafjk   # 配置Sa-Token单独使用的Redis连接 jwt秘钥
 
 gobrs:
   async:
@@ -1705,7 +1694,6 @@ grpc:
   enableReflection: true
   shutdownGrace: 30
   enabled: true
-
   server:
     port: 9899 #服务端端口
     #in-process-name: test #自己的应用程序中调用自己的 grpc服务 使用 grpc 的 InProcessServer 来节省网络间开销
