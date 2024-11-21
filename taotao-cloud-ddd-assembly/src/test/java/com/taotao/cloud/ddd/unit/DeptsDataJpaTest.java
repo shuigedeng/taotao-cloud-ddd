@@ -1,11 +1,14 @@
 package com.taotao.cloud.ddd.unit;
 
+import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.cloud.ddd.infrastructure.persistent.dept.po.DeptPO;
 import com.taotao.cloud.ddd.infrastructure.persistent.dept.repository.inf.IDeptRepository;
 import jakarta.persistence.Query;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -26,12 +29,15 @@ import org.springframework.test.context.TestPropertySource;
 	"spring.jpa.hibernate.ddl-auto=none",
 	"spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect",
 	"spring.jpa.properties.hibernate.hbm2ddl.auto=none",
-	"spring.jpa.properties.hibernate.globally_quoted_identifiers=true"
+	"spring.jpa.properties.hibernate.globally_quoted_identifiers=true",
+	"logging.level.web=TRACE",
+	"logging.level.root=INFO",
 })
 //@TestPropertySource(locations = "classpath:application-dev.yml")
 public class DeptsDataJpaTest {
-
+	private static final Logger logger = LoggerFactory.getLogger(DeptsDataJpaTest.class);
 	static {
+		logger.info("This is a debug message");
 		System.setProperty("spring.profiles.active", "dev");
 	}
 
@@ -54,6 +60,11 @@ public class DeptsDataJpaTest {
 
 	@Test
 	void testSave() {
+		logger.info("This is a debug message");
+		logger.info("3333333333333333333333");
+
+		LogUtils.info("1111111111111111111111111111");
+
 		Query q = entityManager.getEntityManager().createQuery("from DeptPO");
 //		repo.save(u1);
 //		assertThat(q.getResultList()).hasSize(1);

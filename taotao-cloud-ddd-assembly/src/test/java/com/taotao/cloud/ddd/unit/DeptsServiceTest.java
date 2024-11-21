@@ -1,6 +1,7 @@
 package com.taotao.cloud.ddd.unit;
 
 
+import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.cloud.ddd.application.service.impl.DeptsServiceImpl;
 import com.taotao.cloud.ddd.domain.dept.entity.DeptEntity;
 import com.taotao.cloud.ddd.domain.dept.repository.DeptDomainRepository;
@@ -28,6 +29,8 @@ public class DeptsServiceTest {
 
 	@Test
 	void testFindUsersByName() {
+		LogUtils.info("testFindUsersByName");
+
 		// Arrange - 设置测试数据和模拟行为
 		DeptEntity deptEntity = new DeptEntity("John Doe", 1L, "john.doe@example.com", 2);
 		Mockito.when(userRepository.findAll()).thenReturn(List.of(deptEntity));
