@@ -23,6 +23,7 @@ import com.taotao.cloud.ddd.application.command.dept.dto.DeptListQry;
 import com.taotao.cloud.ddd.application.command.dept.dto.DeptModifyCmd;
 import com.taotao.cloud.ddd.application.command.dept.dto.DeptRemoveCmd;
 import com.taotao.cloud.ddd.application.command.dept.dto.clientobject.DeptCO;
+import com.taotao.cloud.ddd.domain.dept.entity.DeptEntity;
 import java.util.List;
 
 /**
@@ -74,4 +75,6 @@ public interface DeptsService {
      * @return 部门IDS
      */
     List<Long> findIds(DeptIdsGetQry qry);
+
+	List<DeptEntity> findAll();
 }

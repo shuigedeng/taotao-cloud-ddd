@@ -14,19 +14,17 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.ddd.biz;
+package com.taotao.cloud.ddd.integration;
 
-import com.taotao.cloud.ddd.TaoTaoCloudDDDApplication;
+import com.taotao.cloud.ddd.TaoTaoCloudDDDApplicationTestBase;
 import com.taotao.cloud.ddd.application.service.DeptsService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 // @ActiveProfiles("test")
 // @TestPropertySource({"classpath:application-test.yml"})
-@SpringBootTest(classes = TaoTaoCloudDDDApplication.class)
-public class SpringDemoMockBeanTest {
+public class DeptsServiceMockTest extends TaoTaoCloudDDDApplicationTestBase {
     @MockBean
     DeptsService mockBeanService;
 

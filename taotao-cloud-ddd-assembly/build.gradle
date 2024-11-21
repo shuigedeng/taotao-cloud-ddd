@@ -21,13 +21,13 @@ dependencies {
     implementation project(":taotao-cloud-ddd-infrastructure")
     implementation project(":taotao-cloud-ddd-common")
 
-    developmentOnly "org.springframework.boot:spring-boot-devtools"
+    //developmentOnly "org.springframework.boot:spring-boot-devtools"
     //developmentOnly "org.springframework.boot:spring-boot-docker-compose"
 
-//    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//    testImplementation 'org.springframework.boot:spring-boot-testcontainers'
-//    testImplementation 'org.testcontainers:junit-jupiter'
-//    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    //testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    //testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+    //testImplementation 'org.testcontainers:junit-jupiter'
+    //testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     testImplementation("io.github.shuigedeng:taotao-boot-starter-test")
 

@@ -20,6 +20,7 @@ import com.taotao.boot.web.base.repository.BaseInterfaceSuperRepository;
 import com.taotao.cloud.ddd.infrastructure.persistent.dept.po.DeptPO;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 /**
  * IDeptRepository
@@ -28,6 +29,8 @@ import org.springframework.data.repository.query.Param;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
+
+@Repository
 public interface IDeptRepository extends BaseInterfaceSuperRepository<DeptPO, Long> {
 
     @Query("select d from DeptPO d where d.version <> ?1")

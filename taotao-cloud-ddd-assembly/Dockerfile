@@ -5,7 +5,9 @@ WORKDIR /root
 
 ADD ./build/libs/taotao-cloud-ddd-2024.12.jar ./
 
-RUN java -Djarmode=layertools -jar taotao-cloud-ddd-2024.12.jar extract
+#RUN java -Djarmode=layertools -jar taotao-cloud-ddd-2024.12.jar extract
+
+RUN java -Djarmode=tools -jar taotao-cloud-ddd-2024.12.jar extract --layers --destination extracted
 
 # FROM registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-skywalking:openjdk-17-8.6.0
 # FROM registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-openjdk21:amd64
@@ -73,6 +75,8 @@ ENV JAVA_OPTIONS="-Xms1g \
                   -Dskywalking.logging.dir=/root/logs/${APP_NAME} \
                   -Dskywalking.collector.backend_service=${BACKEND_SERVICE} "
 
+ENV CDS_JAVA_OPTIONS = "${JAVA_OPTIONS} -XX:SharedArchiveFile=taotao-cloud-ddd.jsa"
+
 USER root
 
 WORKDIR /root
@@ -88,15 +92,24 @@ VOLUME /root/logs
 
 EXPOSE ${APP_PORT}
 
-COPY --from=builder /root/dependencies/ ./
+COPY --from=builder /root/extracted/dependencies/ ./
 RUN true
-COPY --from=builder /root/spring-boot-loader/ ./
+COPY --from=builder /root/extracted/spring-boot-loader/ ./
 RUN true
-COPY --from=builder /root/snapshot-dependencies/ ./
+COPY --from=builder /root/extracted/snapshot-dependencies/ ./
 RUN true
-COPY --from=builder /root/application/ ./
+COPY --from=builder /root/extracted/application/ ./
 RUN true
 
 HEALTHCHECK --interval=120s --timeout=60s --retries=5 CMD curl -fs http://192.168.218.2:${APP_PORT}/actuator/health || exit 1
 
-ENTRYPOINT sleep 30; java ${JAVA_OPTIONS} org.springframework.boot.loader.JarLauncher
+#ENTRYPOINT sleep 30; java ${JAVA_OPTIONS} org.springframework.boot.loader.JarLauncher
+
+#cds
+#https://docs.spring.io/spring-boot/reference/packaging/class-data-sharing.html
+#https://docs.spring.io/spring-boot/reference/packaging/container-images/dockerfiles.html
+RUN java -XX:ArchiveClassesAtExit=taotao-cloud-ddd.jsa -Dspring.context.exit=onRefresh -jar taotao-cloud-ddd-2024.12.jar
+
+#ENTRYPOINT sleep 30; java ${CDS_JAVA_OPTIONS} -jar taotao-cloud-ddd-2024.12.jar
+
+ENTRYPOINT ["java", "${CDS_JAVA_OPTIONS}", "-jar", "taotao-cloud-monitor-2024.12.jar"]

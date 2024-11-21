@@ -17,6 +17,7 @@
 package com.taotao.cloud.ddd.domain.dept.entity;
 
 import static lombok.AccessLevel.PRIVATE;
+import static lombok.AccessLevel.PUBLIC;
 
 import com.taotao.boot.common.exception.BusinessException;
 import com.taotao.boot.ddd.domain.model.AggregateRoot;
@@ -28,8 +29,8 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@AllArgsConstructor(access = PRIVATE)
-@NoArgsConstructor(access = PRIVATE)
+@AllArgsConstructor(access = PUBLIC)
+@NoArgsConstructor(access = PUBLIC)
 @Schema(name = "Dept", description = "部门")
 public class DeptEntity extends AggregateRoot<Long> {
 

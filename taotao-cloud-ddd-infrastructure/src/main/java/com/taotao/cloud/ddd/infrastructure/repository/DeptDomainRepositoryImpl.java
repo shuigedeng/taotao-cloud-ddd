@@ -18,6 +18,7 @@ package com.taotao.cloud.ddd.infrastructure.repository;
 
 import com.taotao.cloud.ddd.domain.dept.entity.DeptEntity;
 import com.taotao.cloud.ddd.domain.dept.repository.DeptDomainRepository;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +35,12 @@ public class DeptDomainRepositoryImpl implements DeptDomainRepository {
     @Override
     public void remove(Long[] ids) {}
 
-    //
+	@Override
+	public List<DeptEntity> findAll() {
+		return List.of();
+	}
+
+	//
     //	private final DeptMapper deptMapper;
     //	private final DeptRepository deptRepository;
     //	private final IDeptRepository deptRepositoryInterface;

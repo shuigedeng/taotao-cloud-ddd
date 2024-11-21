@@ -17,6 +17,7 @@
 package com.taotao.cloud.ddd.domain.dept.repository;
 
 import com.taotao.cloud.ddd.domain.dept.entity.DeptEntity;
+import java.util.List;
 
 public interface DeptDomainRepository {
     /**
@@ -39,4 +40,6 @@ public interface DeptDomainRepository {
      * @param ids IDS
      */
     void remove(Long[] ids);
+
+	List<DeptEntity> findAll();
 }

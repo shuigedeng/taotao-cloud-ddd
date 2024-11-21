@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.ddd.biz;
+package com.taotao.cloud.ddd.integration;
 
 import com.taotao.boot.oss.common.model.OssInfo;
 import com.taotao.boot.oss.common.service.StandardOssClient;

@@ -70,7 +70,7 @@
 #mybatis-plus = { module = "com.baomidou:mybatis-plus-boot-starter", version.ref = "mybatis-plus" }
 #mybatis-generator = { module = "com.baomidou:mybatis-plus-generator", version.ref = "mybatis-plus" }
 #velocity = { module = "org.apache.velocity:velocity-engine-core", version.ref = "velocity" }
-#mysql = { module = "mysql:mysql-connector-java", version.ref = "mysql" }
+#mysql = { module = "com.mysql:mysql-connector-j", version.ref = "mysql" }
 ## 使用的是springdoc-openapi3, https://springdoc.org/#migrating-from-springfox 不再是springfox
 #knife4j = { module = "com.github.xiaoymin:knife4j-openapi3-jakarta-spring-boot-starter", version.ref = "knife4j" }
 #knife4j-gateway = { module = "com.github.xiaoymin:knife4j-gateway-spring-boot-starter", version.ref = "knife4j" }

@@ -30,6 +30,8 @@ import com.taotao.cloud.ddd.application.command.dept.executor.query.DeptGetQryEx
 import com.taotao.cloud.ddd.application.command.dept.executor.query.DeptIdsGetQryExe;
 import com.taotao.cloud.ddd.application.command.dept.executor.query.DeptListQryExe;
 import com.taotao.cloud.ddd.application.service.DeptsService;
+import com.taotao.cloud.ddd.domain.dept.entity.DeptEntity;
+import com.taotao.cloud.ddd.domain.dept.repository.DeptDomainRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -52,6 +54,8 @@ public class DeptsServiceImpl implements DeptsService {
     private final DeptGetQryExe deptGetQryExe;
 
     private final DeptIdsGetQryExe deptIDSGetQryExe;
+
+	private final DeptDomainRepository deptDomainRepository;
 
     /**
      * 查询部门列表.
@@ -115,4 +119,9 @@ public class DeptsServiceImpl implements DeptsService {
     public List<Long> findIds(DeptIdsGetQry qry) {
         return deptIDSGetQryExe.execute(qry);
     }
+
+	@Override
+	public List<DeptEntity> findAll() {
+		return deptDomainRepository.findAll();
+	}
 }
