@@ -19,9 +19,9 @@ package com.taotao.cloud.ddd.api.feign.fallback;
 import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.cloud.ddd.api.feign.FileApi;
 import com.taotao.cloud.ddd.api.feign.response.FileApiResponse;
-import io.seata.core.context.RootContext;
-import io.seata.core.exception.TransactionException;
-import io.seata.tm.api.GlobalTransactionContext;
+import org.apache.seata.core.exception.TransactionException;
+import org.apache.seata.tm.api.GlobalTransactionContext;
+import org.apache.seata.core.context.RootContext;
 import org.dromara.hutool.core.text.StrUtil;
 import org.springframework.cloud.openfeign.FallbackFactory;
 
@@ -33,24 +33,25 @@ import org.springframework.cloud.openfeign.FallbackFactory;
  */
 public class FileApiFallback implements FallbackFactory<FileApi> {
 
-    @Override
-    public FileApi create(Throwable throwable) {
-        LogUtils.info("throwablethrowablethrowablethrowablethrowable");
+	@Override
+	public FileApi create(Throwable throwable) {
+		LogUtils.info("throwablethrowablethrowablethrowablethrowable");
 
-        return new FileApi() {
-            @Override
-            public FileApiResponse findByCode(String code) {
+		return new FileApi() {
+			@Override
+			public FileApiResponse findByCode(String code) {
 
-                if (StrUtil.isNotBlank(RootContext.getXID())) {
-                    try {
-                        GlobalTransactionContext.reload(RootContext.getXID()).rollback();
-                    } catch (TransactionException e) {
-                        LogUtils.error(e);
-                    }
-                }
+				if (StrUtil.isNotBlank(RootContext.getXID())) {
+					try {
+						GlobalTransactionContext.reload(RootContext.getXID()).rollback();
+					}
+					catch (TransactionException e) {
+						LogUtils.error(e);
+					}
+				}
 
-                return null;
-            }
-        };
-    }
+				return null;
+			}
+		};
+	}
 }

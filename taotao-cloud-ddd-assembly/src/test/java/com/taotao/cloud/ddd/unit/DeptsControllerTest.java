@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 @WebMvcTest(DeptsController.class) // 仅加载与 UserController 相关的 Web 层组件进行测试
@@ -14,7 +15,7 @@ public class DeptsControllerTest {
   @Autowired
   private MockMvc mockMvc; // 注入 MockMvc 用于模拟 HTTP 请求
 
-  @MockBean
+  @MockitoBean
   private DeptsService userService; // 模拟 UserService 依赖
 
   @Test

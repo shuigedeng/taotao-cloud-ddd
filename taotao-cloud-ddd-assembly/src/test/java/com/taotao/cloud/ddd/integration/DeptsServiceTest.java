@@ -38,8 +38,11 @@ public class DeptsServiceTest extends TaoTaoCloudDDDApplicationTestBase {
     @Autowired
     private DeptsService deptsService;
 
-    @TtcTest(duration = 1000, reporter = HtmlReporter.class)
+    //@TtcTest(duration = 1000, reporter = HtmlReporter.class)
+	@Test
     public void helloTest111() throws InterruptedException {
+		Thread.sleep(100000);
+
         int i = deptsService.hashCode();
 
         Thread.sleep(100);
