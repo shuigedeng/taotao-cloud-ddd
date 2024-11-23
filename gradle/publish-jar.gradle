@@ -1,4 +1,5 @@
 import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 apply plugin: 'maven-publish'
 apply plugin: 'signing'
@@ -132,7 +133,7 @@ jar {
                 'Built-Gradle': gradle.gradleVersion,
                 'Build-OS': System.getProperty("os.name"),
                 'Build-Jdk': System.getProperty("java.version"),
-                'Build-Timestamp': LocalDateTime.now().format("yyyy-MM-dd HH:mm:ss")
+                'Build-Timestamp': LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
         )
     }
 }
