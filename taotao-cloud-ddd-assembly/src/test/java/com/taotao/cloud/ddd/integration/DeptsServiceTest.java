@@ -41,7 +41,7 @@ public class DeptsServiceTest extends TaoTaoCloudDDDApplicationTestBase {
     //@TtcTest(duration = 1000, reporter = HtmlReporter.class)
 	@Test
     public void helloTest111() throws InterruptedException {
-		Thread.sleep(100000);
+		Thread.sleep(100 * 1000);
 
         int i = deptsService.hashCode();
 
