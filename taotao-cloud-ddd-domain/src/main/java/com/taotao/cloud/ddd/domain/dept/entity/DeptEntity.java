@@ -20,17 +20,13 @@ import static lombok.AccessLevel.PRIVATE;
 import static lombok.AccessLevel.PUBLIC;
 
 import com.taotao.boot.common.exception.BusinessException;
-import com.taotao.boot.ddd.domain.model.AggregateRoot;
+import com.taotao.boot.ddd.model.domain.AggregateRoot;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@Builder
-@AllArgsConstructor(access = PUBLIC)
-@NoArgsConstructor(access = PUBLIC)
 @Schema(name = "Dept", description = "部门")
 public class DeptEntity extends AggregateRoot<Long> {
 
@@ -46,7 +42,11 @@ public class DeptEntity extends AggregateRoot<Long> {
     @Schema(name = "sort", description = "部门排序")
     private Integer sort;
 
-    public void checkName(long count) {
+	protected DeptEntity(Long aLong) {
+		super(aLong);
+	}
+
+	public void checkName(long count) {
         if (count > 0) {
             throw new BusinessException("部门名称已存在，请重新填写");
         }
