@@ -14,12 +14,7 @@ apply from: rootProject.file('gradle/mybatis-generator.gradle')
 apply from: rootProject.file('gradle/springboot.gradle')
 
 dependencies {
-    implementation project(":taotao-cloud-ddd-application")
     implementation project(":taotao-cloud-ddd-facade")
-    implementation project(":taotao-cloud-ddd-domain")
-    implementation project(":taotao-cloud-ddd-integration")
-    implementation project(":taotao-cloud-ddd-infrastructure")
-    implementation project(":taotao-cloud-ddd-common")
 
     //developmentOnly "org.springframework.boot:spring-boot-devtools"
     //developmentOnly "org.springframework.boot:spring-boot-docker-compose"
