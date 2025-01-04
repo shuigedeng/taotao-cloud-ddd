@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.ddd.infrastructure.persistent.dept.mapper;
 
-import com.taotao.boot.web.base.mapper.BaseSuperMapper;
+import com.taotao.boot.webagg.mapper.BaseSuperMapper;
 import com.taotao.cloud.ddd.infrastructure.persistent.dept.po.DeptPO;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
