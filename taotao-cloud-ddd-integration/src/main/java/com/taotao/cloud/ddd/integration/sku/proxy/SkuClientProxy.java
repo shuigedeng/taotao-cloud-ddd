@@ -24,6 +24,7 @@ import com.taotao.cloud.goods.api.dubbo.request.GoodsQueryRpcRequest;
 import com.taotao.cloud.goods.api.dubbo.response.GoodsQueryRpcResponse;
 import com.taotao.cloud.goods.api.grpc.GoodsSkuGrpcResponse;
 import jakarta.annotation.Resource;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.openjdk.nashorn.internal.ir.annotations.Reference;
 import org.springframework.stereotype.Component;
 
@@ -38,7 +39,7 @@ public class SkuClientProxy {
     @Resource
     private SkuGrpcClient skuGrpcClient;
 
-    @Reference
+    @DubboReference
     private GoodsRpcService goodsRpcService;
 
     // 查询用户
