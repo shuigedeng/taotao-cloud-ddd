@@ -6,7 +6,7 @@ configurations {
 
 mybatisGenerator {
     verbose = true
-    configFile = 'src/main/resources/mybatisGenerator/generatorConfiguration.xml'
+    configFile = 'generatorConfiguration.xml'
 
 //    mybatisProperties = ['key1' : "value1",'key2' : "value2"]
 //    mybatisProperties = [
