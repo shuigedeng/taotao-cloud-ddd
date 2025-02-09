@@ -49,7 +49,7 @@ import org.hibernate.Hibernate;
 // @org.hibernate.annotations.Table(appliesTo = Dept.TABLE_NAME, comment = "后台部门表")
 public class DeptPO extends BaseSuperEntity<DeptPO, Long> {
 
-    public static final String TABLE_NAME = "tt_dept";
+    public static final String TABLE_NAME = "ttc_dept";
 
     /** 部门名称 */
     @Column(name = "name", columnDefinition = "varchar(32) not null comment '部门名称'")

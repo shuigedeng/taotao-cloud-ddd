@@ -139,7 +139,7 @@ import org.hibernate.Hibernate;
 // @org.hibernate.annotations.Table(appliesTo = Dict.TABLE_NAME, comment = "字典表")
 public class DictPO extends BaseSuperEntity<DictPO, Long> {
 
-    public static final String TABLE_NAME = "tt_dict";
+    public static final String TABLE_NAME = "ttc_dict";
 
     /** 字典名称 */
     @Column(name = "dict_name", columnDefinition = "varchar(255) not null  comment '字典名称'")
