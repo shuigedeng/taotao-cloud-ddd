@@ -20,6 +20,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 /**
  * 移动端-字典API
@@ -32,4 +33,4 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/sys/mall/dict")
 @Tag(name = "移动端-字典API", description = "移动端-字典API")
-public class MallDictController {}
+public class MallDictController extends BusinessController {}

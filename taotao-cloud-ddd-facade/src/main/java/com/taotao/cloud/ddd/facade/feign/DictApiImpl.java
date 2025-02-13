@@ -23,6 +23,7 @@ import com.taotao.boot.ratelimit.guava.GuavaLimit;
 import com.taotao.boot.ratelimit.guava.Limit;
 import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.web.request.annotation.RequestLogger;
+import com.taotao.boot.webagg.controller.FeignController;
 import com.taotao.cloud.ddd.api.feign.DictApi;
 import com.taotao.cloud.ddd.api.feign.response.DictApiResponse;
 import com.yomahub.tlog.core.annotation.TLogAspect;
@@ -39,7 +40,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RestController
 @RequestMapping("/sys/feign/dict")
-public class DictApiImpl implements DictApi {
+public class DictApiImpl extends FeignController implements DictApi {
 
     @Override
     @NotAuth

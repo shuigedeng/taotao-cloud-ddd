@@ -38,12 +38,13 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 @RestController
 @Tag(name = "DeptsController", description = "部门管理")
 @RequiredArgsConstructor
 @RequestMapping("v1/depts")
-public class DeptsController {
+public class DeptsController extends BusinessController {
 
     private final DeptsService deptsService;
 

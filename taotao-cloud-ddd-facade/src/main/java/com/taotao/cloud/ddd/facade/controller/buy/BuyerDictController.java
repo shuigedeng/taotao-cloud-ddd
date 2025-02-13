@@ -40,6 +40,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 /**
  * pc端-字典API
@@ -53,7 +54,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/sys/buyer/dict")
 @Tag(name = "pc端-字典API", description = "pc端-字典API")
-public class BuyerDictController {
+public class BuyerDictController extends BusinessController {
 
     private final DictsService dictsService;
     private final DeptsService deptsService;
