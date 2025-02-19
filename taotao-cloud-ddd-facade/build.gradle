@@ -35,6 +35,7 @@
 dependencies {
     api project(":taotao-cloud-ddd-api")
     api project(":taotao-cloud-ddd-application")
+    api project(":taotao-cloud-ddd-infrastructure")
 }
 
 
