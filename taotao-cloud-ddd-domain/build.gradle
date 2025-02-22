@@ -56,7 +56,6 @@
 
 dependencies {
     api project(":taotao-cloud-ddd-common")
-    api project(":taotao-cloud-ddd-integration")
 
     //cloud
     api "io.github.shuigedeng:taotao-cloud-starter-seata"
