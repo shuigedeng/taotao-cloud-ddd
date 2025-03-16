@@ -113,7 +113,7 @@ include "taotao-cloud-ddd-common"
 include "taotao-cloud-ddd-domain"
 include "taotao-cloud-ddd-facade"
 include "taotao-cloud-ddd-infrastructure"
-include "taotao-cloud-ddd-integration"
+include "taotao-cloud-ddd-interfaces"
 
 
 gradle.settingsEvaluated {

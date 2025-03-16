@@ -195,7 +195,7 @@ arthas:
 
 dubbo:
   scan:
-    base-packages: com.taotao.cloud.ddd.facade.dubbo
+    base-packages: com.taotao.cloud.ddd.interfaces.dubbo
   application:
     name: ${spring.application.name}     #当前应用名称
     compiler: javassist     #Java字节码编译器，用于动态类的生成，可选：jdk或javassist
@@ -1280,7 +1280,7 @@ taotao:
       group: ${spring.application.name}
       version: ${ttcVersion}
       title: 系统管理模块
-      packages-to-scan: com.taotao.cloud.ddd.facade.controller.*
+      packages-to-scan: com.taotao.cloud.ddd.interfaces.controller.*
     metrics:
       enabled: true
       druid:

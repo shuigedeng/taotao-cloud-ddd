@@ -42,9 +42,7 @@ public class DeptEntity extends AggregateRoot<Long> {
     @Schema(name = "sort", description = "部门排序")
     private Integer sort;
 
-	protected DeptEntity(Long aLong) {
-		super(aLong);
-	}
+
 
 	public void checkName(long count) {
         if (count > 0) {
