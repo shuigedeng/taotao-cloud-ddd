@@ -38,7 +38,7 @@ public class DeptControllerTest extends TaoTaoCloudDDDApplicationTestBase {
 			.param("id", "123") //参数
 			.param("first_flag", String.valueOf(true)); //参数
 
-		MvcResult result = mockMvc.perform(requestBuilder)
+		MvcResult result = MockMvc.perform(requestBuilder)
 			.andExpect(MockMvcResultMatchers.status().isOk())  // 验证请求的HTTP状态码为200
 			.andExpect(MockMvcResultMatchers.jsonPath("$.message")
 				.value("success"))  // 验证响应中的JSON字段"message"的值为"success"
