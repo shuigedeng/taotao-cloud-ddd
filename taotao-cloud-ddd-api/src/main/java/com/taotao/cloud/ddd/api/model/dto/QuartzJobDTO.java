@@ -17,10 +17,12 @@
 package com.taotao.cloud.ddd.api.model.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Data;
+import lombok.*;
 
 /** 定时任务 */
-@Data
+@Setter
+@Getter
+@ToString
 @Schema(title = "定时任务")
 public class QuartzJobDTO {
 

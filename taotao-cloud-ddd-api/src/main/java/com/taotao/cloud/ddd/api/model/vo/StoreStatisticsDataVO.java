@@ -20,11 +20,13 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 
 /** 商品统计VO */
-@Data
+@Setter
+@Getter
+@ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor

@@ -18,10 +18,12 @@ package com.taotao.cloud.ddd.api.model.vo;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.LocalDateTime;
-import lombok.Data;
+import lombok.*;
 
 /** 任务执行日志 */
-@Data
+@Setter
+@Getter
+@ToString
 @Schema(title = "定时任务执行日志")
 public class QuartzJobLogVO {
 

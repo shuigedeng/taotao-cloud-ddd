@@ -17,9 +17,11 @@
 package com.taotao.cloud.ddd.infrastructure.persistent.dict.params;
 
 import java.util.List;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Setter
+@Getter
+@ToString
 public class DictDeptParams {
 
     private List<Long> ids;

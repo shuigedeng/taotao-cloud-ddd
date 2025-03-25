@@ -19,10 +19,12 @@ package com.taotao.cloud.ddd.application.command.dept.dto;
 import com.taotao.boot.ddd.model.application.CommonCommand;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 
-@Data
+@Setter
+@Getter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(name = "DeptDeleteCmd", description = "删除部门命令请求")

@@ -29,7 +29,9 @@ import lombok.*;
  * @version 2021.10
  * @since 2021-10-09 15:27:42
  */
-@Data
+@Setter
+@Getter
+@ToString
 @Builder
 @EqualsAndHashCode
 @AllArgsConstructor

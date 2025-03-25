@@ -16,9 +16,11 @@
 
 package com.taotao.cloud.ddd.infrastructure.persistent.dict.dataobject;
 
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Setter
+@Getter
+@ToString
 public class DictDeptDO {
 
     // dict

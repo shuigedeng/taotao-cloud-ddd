@@ -18,11 +18,13 @@ package com.taotao.cloud.ddd.api.model.page;
 
 import com.taotao.boot.common.model.PageQuery;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Data;
+import lombok.*;
 import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
-@Data
+@Setter
+@Getter
+@ToString
 @Schema(title = "定时任务日志查询")
 public class QuartzJobLogPageQuery extends PageQuery {
 

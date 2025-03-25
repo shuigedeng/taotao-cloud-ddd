@@ -18,12 +18,14 @@ package com.taotao.cloud.ddd.application.command.dict.dto;
 
 import com.taotao.boot.common.model.PageQuery;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Data;
+import lombok.*;
 
 /**
  *
  */
-@Data
+@Setter
+@Getter
+@ToString
 @Schema(name = "DictListQry", description = "字典列表查询参数")
 public class DictListQry extends PageQuery {
 

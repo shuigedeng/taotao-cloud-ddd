@@ -19,11 +19,13 @@ package com.taotao.cloud.ddd.api.model.page;
 import com.taotao.boot.common.model.PageQuery;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-@Data
+@Setter
+@Getter
+@ToString
 @Builder
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor

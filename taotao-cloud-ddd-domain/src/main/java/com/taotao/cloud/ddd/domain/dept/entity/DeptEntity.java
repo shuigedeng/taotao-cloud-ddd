@@ -24,7 +24,7 @@ import com.taotao.boot.ddd.model.domain.AggregateRoot;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 
 @Schema(name = "Dept", description = "部门")

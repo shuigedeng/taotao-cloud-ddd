@@ -23,7 +23,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
@@ -34,7 +34,9 @@ import lombok.NoArgsConstructor;
  * @version 2023.04
  * @since 2023-05-09 15:08:02
  */
-@Data
+@Setter
+@Getter
+@ToString
 @Builder
 @EqualsAndHashCode
 @AllArgsConstructor

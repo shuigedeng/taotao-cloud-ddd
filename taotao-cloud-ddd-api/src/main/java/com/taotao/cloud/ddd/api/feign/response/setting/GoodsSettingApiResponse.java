@@ -21,12 +21,14 @@ import java.io.Serial;
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /** 商品配置 */
-@Data
+@Setter
+@Getter
+@ToString
 @Builder
 @EqualsAndHashCode
 @AllArgsConstructor

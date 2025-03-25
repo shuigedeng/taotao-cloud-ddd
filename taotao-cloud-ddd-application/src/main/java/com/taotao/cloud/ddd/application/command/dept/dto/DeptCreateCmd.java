@@ -19,9 +19,11 @@ package com.taotao.cloud.ddd.application.command.dept.dto;
 import com.taotao.boot.ddd.model.application.CommonCommand;
 import com.taotao.cloud.ddd.application.command.dept.dto.clientobject.DeptCO;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Setter
+@Getter
+@ToString
 @Schema(name = "DeptInsertCmd", description = "新增部门命令请求")
 public class DeptCreateCmd extends CommonCommand {
 

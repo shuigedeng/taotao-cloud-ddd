@@ -20,11 +20,13 @@ import java.sql.Timestamp;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-@Data
+@Setter
+@Getter
+@ToString
 @Builder
 @EqualsAndHashCode
 @AllArgsConstructor

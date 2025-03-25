@@ -17,17 +17,21 @@
 package com.taotao.cloud.ddd.api.feign.response.setting;
 
 import java.util.List;
-import lombok.Data;
+import lombok.*;
 
 /** 微信设置 */
-@Data
+@Setter
+@Getter
+@ToString
 public class WechatConnectSettingApiResponse {
 
     /** 微信联合登陆配置 */
     List<WechatConnectSettingItemVO> wechatConnectSettingItemVOS;
 
 	/** 微信设置 */
-	@Data
+	@Setter
+@Getter
+@ToString
 	public static class WechatConnectSettingItemVO {
 
 		/**

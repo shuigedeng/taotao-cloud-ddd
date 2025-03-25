@@ -19,10 +19,12 @@ package com.taotao.cloud.ddd.api.feign.response.setting;
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import lombok.Data;
+import lombok.*;
 
 /** 经验值设置 */
-@Data
+@Setter
+@Getter
+@ToString
 public class ExperienceSettingApiResponse implements Serializable {
 
     @Serial

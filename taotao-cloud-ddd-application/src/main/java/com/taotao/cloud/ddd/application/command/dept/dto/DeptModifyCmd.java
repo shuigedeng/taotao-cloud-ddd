@@ -20,10 +20,12 @@ import com.taotao.boot.ddd.model.application.CommonCommand;
 import com.taotao.cloud.ddd.application.command.dept.dto.clientobject.DeptCO;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 
-@Data
+@Setter
+@Getter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(name = "DeptUpdateCmd", description = "修改部门命令请求")

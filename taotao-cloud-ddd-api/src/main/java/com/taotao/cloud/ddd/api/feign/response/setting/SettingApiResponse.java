@@ -19,12 +19,14 @@ package com.taotao.cloud.ddd.api.feign.response.setting;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /** 配置表 */
-@Data
+@Setter
+@Getter
+@ToString
 @Builder
 @EqualsAndHashCode
 @AllArgsConstructor

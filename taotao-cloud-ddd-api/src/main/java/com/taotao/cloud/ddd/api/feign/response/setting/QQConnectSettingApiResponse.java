@@ -17,17 +17,21 @@
 package com.taotao.cloud.ddd.api.feign.response.setting;
 
 import java.util.List;
-import lombok.Data;
+import lombok.*;
 
 /** QQ联合登录设置 */
-@Data
+@Setter
+@Getter
+@ToString
 public class QQConnectSettingApiResponse {
 
     /** qq联合登陆配置 */
     List<QQConnectSettingItemVO> qqConnectSettingItemList;
 
 	/** QQ联合登录具体配置 */
-	@Data
+	@Setter
+@Getter
+@ToString
 	public static class QQConnectSettingItemVO {
 
 		private String clientType;

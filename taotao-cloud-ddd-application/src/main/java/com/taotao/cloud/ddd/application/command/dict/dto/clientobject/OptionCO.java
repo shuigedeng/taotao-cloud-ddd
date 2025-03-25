@@ -19,12 +19,14 @@ package com.taotao.cloud.ddd.application.command.dict.dto.clientobject;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 
 /**
  */
-@Data
+@Setter
+@Getter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(name = "OptionCO", description = "下拉框选择参数项参数")

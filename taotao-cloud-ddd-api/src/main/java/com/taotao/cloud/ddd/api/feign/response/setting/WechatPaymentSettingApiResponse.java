@@ -16,11 +16,13 @@
 
 package com.taotao.cloud.ddd.api.feign.response.setting;
 
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 /** 微信支付设置 */
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(chain = true)
 public class WechatPaymentSettingApiResponse {
 

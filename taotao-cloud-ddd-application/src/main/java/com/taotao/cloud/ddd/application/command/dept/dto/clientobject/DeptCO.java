@@ -24,10 +24,12 @@ import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 
-@Data
+@Setter
+@Getter
+@ToString
 @Builder
 @AllArgsConstructor(access = PRIVATE)
 @NoArgsConstructor(access = PRIVATE)

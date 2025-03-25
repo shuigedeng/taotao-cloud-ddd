@@ -19,12 +19,14 @@ package com.taotao.cloud.ddd.api.feign.response.setting;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
-import lombok.Data;
+import lombok.*;
 
 /**
  * 积分设置
  */
-@Data
+@Setter
+@Getter
+@ToString
 public class PointSettingApiResponse implements Serializable {
 
 	@Serial
@@ -93,7 +95,9 @@ public class PointSettingApiResponse implements Serializable {
 	/**
 	 * 积分签到设置
 	 */
-	@Data
+	@Setter
+@Getter
+@ToString
 	public static class PointSettingItemVO implements
 		Comparable<PointSettingItemVO>,
 		Serializable {

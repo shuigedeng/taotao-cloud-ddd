@@ -18,10 +18,12 @@ package com.taotao.cloud.ddd.api.feign.response.setting;
 
 import java.io.Serial;
 import java.io.Serializable;
-import lombok.Data;
+import lombok.*;
 
 /** 订单设置 */
-@Data
+@Setter
+@Getter
+@ToString
 public class OrderSettingApiResponse implements Serializable {
 
     @Serial

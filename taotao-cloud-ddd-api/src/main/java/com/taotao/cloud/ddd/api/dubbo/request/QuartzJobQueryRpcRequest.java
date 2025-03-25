@@ -20,7 +20,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 
 /**
@@ -30,7 +30,9 @@ import lombok.NoArgsConstructor;
  * @version 2021.10
  * @since 2021-10-09 15:27:42
  */
-@Data
+@Setter
+@Getter
+@ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor

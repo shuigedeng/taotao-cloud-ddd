@@ -16,9 +16,11 @@
 
 package com.taotao.cloud.ddd.api.model.query;
 
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Setter
+@Getter
+@ToString
 public class FileQuery {
 
     private Long dictId;

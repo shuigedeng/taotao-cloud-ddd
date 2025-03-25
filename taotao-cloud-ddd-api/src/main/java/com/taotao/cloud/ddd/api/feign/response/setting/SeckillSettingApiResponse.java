@@ -18,10 +18,12 @@ package com.taotao.cloud.ddd.api.feign.response.setting;
 
 import jakarta.validation.constraints.NotNull;
 import java.io.Serializable;
-import lombok.Data;
+import lombok.*;
 
 /** 秒杀活动设置 */
-@Data
+@Setter
+@Getter
+@ToString
 public class SeckillSettingApiResponse implements Serializable {
 
     /** 开启几点场 例如：6,8,12 */
