@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.ddd.api.feign;
 
-import com.taotao.boot.common.constant.ServiceName;
+import com.taotao.boot.common.constant.ServiceNameConstants;
 import com.taotao.cloud.ddd.api.feign.fallback.QuartzJobApiFallback;
 import com.taotao.cloud.ddd.api.model.dto.QuartzJobDTO;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  */
 @FeignClient(
 	contextId = "QuartzJobApi",
-	value = ServiceName.TAOTAO_CLOUD_JOB,
+	value = ServiceNameConstants.TAOTAO_CLOUD_JOB,
 	fallbackFactory = QuartzJobApiFallback.class)
 public interface QuartzJobApi {
 
