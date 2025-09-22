@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.ddd.infrastructure.persistent.dict.repository.inf;
 
-import com.taotao.boot.webagg.repository.BaseInterfaceSuperRepository;
+import com.taotao.boot.data.jpa.base.repository.JpaSuperRepository;
 import com.taotao.cloud.ddd.infrastructure.persistent.dict.po.DictItemPO;
 
 /**
@@ -26,4 +26,4 @@ import com.taotao.cloud.ddd.infrastructure.persistent.dict.po.DictItemPO;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface IDictItemRepository extends BaseInterfaceSuperRepository<DictItemPO, Long> {}
+public interface IDictItemRepository extends JpaSuperRepository<DictItemPO, Long> {}
