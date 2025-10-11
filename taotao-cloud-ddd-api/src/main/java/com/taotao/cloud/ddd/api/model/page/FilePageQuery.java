@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.ddd.api.model.page;
 
-import com.taotao.boot.common.model.PageQuery;
+import com.taotao.boot.common.model.request.PageQuery;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.*;

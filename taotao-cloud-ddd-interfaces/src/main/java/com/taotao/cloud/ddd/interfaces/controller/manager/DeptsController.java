@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.ddd.interfaces.controller.manager;
 
-import com.taotao.boot.common.model.Result;
+import com.taotao.boot.common.model.result.Result;
 import com.taotao.boot.webagg.controller.BusinessController;
 import com.taotao.cloud.ddd.application.command.dept.dto.DeptCreateCmd;
 import com.taotao.cloud.ddd.application.command.dept.dto.DeptGetQry;

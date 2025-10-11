@@ -17,7 +17,7 @@
 package com.taotao.cloud.ddd.domain.dict.service.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.taotao.boot.common.model.PageQuery;
+import com.taotao.boot.common.model.request.PageQuery;
 import com.taotao.cloud.ddd.domain.dict.entity.DictEntity;
 import com.taotao.cloud.ddd.domain.dict.service.DictDomainService;
 import lombok.AllArgsConstructor;
