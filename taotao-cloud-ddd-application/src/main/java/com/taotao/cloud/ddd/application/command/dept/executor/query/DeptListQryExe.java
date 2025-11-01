@@ -26,7 +26,6 @@ import com.taotao.cloud.ddd.infrastructure.persistent.dept.po.DeptPO;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.dromara.hutool.core.text.StrUtil;
 import org.springframework.stereotype.Component;
 
 /**
