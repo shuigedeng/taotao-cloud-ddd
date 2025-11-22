@@ -125,19 +125,19 @@ dependencies {
     //https://search.maven.org/artifact/org.freemarker/freemarker
     api 'org.springframework.boot:spring-boot-starter-freemarker'
 
-    api 'org.zalando:logbook-spring-boot-starter:3.12.0'
-    api 'org.zalando:logbook-httpclient5:3.12.0'
-    api 'org.zalando:logbook-netty:3.12.0'
-    api 'org.zalando:logbook-okhttp:3.12.0'
-    api 'org.zalando:logbook-okhttp2:3.12.0'
-    api 'org.zalando:logbook-openfeign:3.12.0'
-    api 'org.zalando:logbook-spring-webflux:3.12.0'
+    api 'org.zalando:logbook-spring-boot-starter:3.12.3'
+    api 'org.zalando:logbook-httpclient5:3.12.3'
+    api 'org.zalando:logbook-netty:3.12.3'
+    api 'org.zalando:logbook-okhttp:3.12.3'
+    api 'org.zalando:logbook-okhttp2:3.12.3'
+    api 'org.zalando:logbook-openfeign:3.12.3'
+    api 'org.zalando:logbook-spring-webflux:3.12.3'
 
     //api "io.github.shuigedeng:taotao-boot-starter-processor")
     //annotationProcessor "io.github.shuigedeng:taotao-boot-starter-processor")
 
     annotationProcessor "com.querydsl:querydsl-apt:5.1.0:jakarta"
     api "com.querydsl:querydsl-jpa:5.1.0:jakarta"
-    api "jakarta.persistence:jakarta.persistence-api:3.1.0"
-    annotationProcessor "jakarta.persistence:jakarta.persistence-api:3.1.0"
+    api "jakarta.persistence:jakarta.persistence-api:3.2.0"
+    annotationProcessor "jakarta.persistence:jakarta.persistence-api:3.2.0"
 }
