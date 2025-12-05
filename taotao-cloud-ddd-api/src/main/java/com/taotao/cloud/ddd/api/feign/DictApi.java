@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.ddd.api.feign;
+package com.taotao.cloud.ddd.api.client;
 
 import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
 import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
@@ -24,12 +24,12 @@ import com.taotao.boot.common.support.info.ApiInfo;
 import com.taotao.boot.common.support.info.Caller;
 import com.taotao.boot.common.support.info.Create;
 import com.taotao.boot.common.support.info.Update;
-import com.taotao.cloud.ddd.api.feign.fallback.DictApiFallback;
-import com.taotao.cloud.ddd.api.feign.response.DictApiResponse;
-import com.taotao.cloud.openfeign.annotation.FeignInner;
-import com.taotao.cloud.openfeign.annotation.FeignRetry;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.taotao.cloud.ddd.api.client.fallback.DictApiFallback;
+import com.taotao.cloud.ddd.api.client.response.DictApiResponse;
+
+
+import org.springframework.web.service.annotation.HttpExchange;
+import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -39,7 +39,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author shuigedeng
  * @since 2020/5/2 16:42
  */
-@FeignClient(
+@HttpExchange(
 	contextId = "DictApi",
 	name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
 	fallbackFactory = DictApiFallback.class)
@@ -62,9 +62,8 @@ public interface DictApi {
 			@Caller(contacts = "张三", desc = "支付系统", sys = "支付系统", use = "调用字典查询获取详情"),
 			@Caller(contacts = "李四", desc = "后台管理-字典管理-添加页面", sys = "后台管理", use = "查询字典")
 		})
-	@FeignRetry(maxAttempt = 6, backoff = @FeignRetry.Backoff(delay = 500L, maxDelay = 20000L, multiplier = 4))
-	@FeignInner
-	@GetMapping("/sys/feign/dict/code")
+
+	@GetExchange("/sys/feign/dict/code")
 	DictApiResponse findByCode(@RequestParam(value = "code") String code);
 
 	/**
@@ -80,6 +79,6 @@ public interface DictApi {
 			@Update(version = V2022_07, content = "主要修改了配置信息的接口查询", date = "2022-07-01 17:11:55"),
 			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
 		})
-	@GetMapping("/sys/feign/dict/code")
+	@GetExchange("/sys/feign/dict/code")
 	DictApiResponse test(@RequestParam(value = "id") String id);
 }

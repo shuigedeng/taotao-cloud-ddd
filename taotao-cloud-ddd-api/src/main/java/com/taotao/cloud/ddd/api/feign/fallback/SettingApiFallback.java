@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.ddd.api.feign.fallback;
+package com.taotao.cloud.ddd.api.client.fallback;
 
-import com.taotao.cloud.ddd.api.feign.SettingApi;
-import com.taotao.cloud.ddd.api.feign.response.setting.AlipayPaymentSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.BaseSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.ExperienceSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.GoodsSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.OrderSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.PointSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.QQConnectSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.SeckillSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.SettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.WechatConnectSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.WechatPaymentSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.SettingApi;
+import com.taotao.cloud.ddd.api.client.response.setting.AlipayPaymentSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.BaseSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.ExperienceSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.GoodsSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.OrderSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.PointSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.QQConnectSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.SeckillSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.SettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.WechatConnectSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.WechatPaymentSettingApiResponse;
 import org.springframework.cloud.openfeign.FallbackFactory;
 
 /**

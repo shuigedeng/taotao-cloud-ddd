@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.ddd.api.feign;
+package com.taotao.cloud.ddd.api.client;
 
 import com.taotao.boot.common.constant.ServiceNameConstants;
 import com.taotao.boot.common.model.result.Result;
-import com.taotao.cloud.ddd.api.feign.fallback.LogisticsApiFallback;
-import com.taotao.cloud.ddd.api.feign.response.LogisticsApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.TracesApiResponse;
+import com.taotao.cloud.ddd.api.client.fallback.LogisticsApiFallback;
+import com.taotao.cloud.ddd.api.client.response.LogisticsApiResponse;
+import com.taotao.cloud.ddd.api.client.response.TracesApiResponse;
 import java.util.List;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.service.annotation.HttpExchange;
+import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @version 2022.03
  * @since 2022-03-25 14:09:10
  */
-@FeignClient(
+@HttpExchange(
 	name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
 	contextId = "LogisticsApi",
 	fallbackFactory = LogisticsApiFallback.class)
@@ -46,7 +46,7 @@ public interface LogisticsApi {
 	 * @return {@link Result }<{@link LogisticsApiResponse }>
 	 * @since 2022-04-25 16:47:29
 	 */
-	@GetMapping("/sys/feign/logistic/codes")
+	@GetExchange("/sys/feign/logistic/codes")
 	LogisticsApiResponse getById(@RequestParam(value = "logisticsId") Long logisticsId);
 
 	/**
@@ -57,10 +57,10 @@ public interface LogisticsApi {
 	 * @return {@link Result }<{@link TracesApiResponse }>
 	 * @since 2022-04-25 16:47:32
 	 */
-	@GetMapping("/sys/feign/logistic/info")
+	@GetExchange("/sys/feign/logistic/info")
 	TracesApiResponse getLogistic(@RequestParam(value = "logisticsId") Long logisticsId,
 		@RequestParam(value = "logisticsNo") String logisticsNo);
 
-	@GetMapping("/sys/feign/logistic/list")
+	@GetExchange("/sys/feign/logistic/list")
 	List<LogisticsApiResponse> list();
 }

@@ -14,6 +14,6 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.ddd.api.feign.request;
+package com.taotao.cloud.ddd.api.client.request;
 
 public class SysLogApiRequest {}

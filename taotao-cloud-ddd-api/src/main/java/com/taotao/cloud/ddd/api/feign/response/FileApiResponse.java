@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.ddd.api.feign.response;
+package com.taotao.cloud.ddd.api.client.response;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;

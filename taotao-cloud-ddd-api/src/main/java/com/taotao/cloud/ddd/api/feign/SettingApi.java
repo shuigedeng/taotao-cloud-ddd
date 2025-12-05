@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.ddd.api.feign;
+package com.taotao.cloud.ddd.api.client;
 
 import com.taotao.boot.common.constant.ServiceNameConstants;
 import com.taotao.boot.common.model.result.Result;
-import com.taotao.cloud.ddd.api.feign.fallback.SettingApiFallback;
-import com.taotao.cloud.ddd.api.feign.response.setting.AlipayPaymentSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.BaseSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.ExperienceSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.GoodsSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.OrderSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.PointSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.QQConnectSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.SeckillSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.SettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.WechatConnectSettingApiResponse;
-import com.taotao.cloud.ddd.api.feign.response.setting.WechatPaymentSettingApiResponse;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.taotao.cloud.ddd.api.client.fallback.SettingApiFallback;
+import com.taotao.cloud.ddd.api.client.response.setting.AlipayPaymentSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.BaseSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.ExperienceSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.GoodsSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.OrderSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.PointSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.QQConnectSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.SeckillSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.SettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.WechatConnectSettingApiResponse;
+import com.taotao.cloud.ddd.api.client.response.setting.WechatPaymentSettingApiResponse;
+import org.springframework.web.service.annotation.HttpExchange;
+import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -41,7 +41,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @version 2022.03
  * @since 2022-03-25 14:09:48
  */
-@FeignClient(
+@HttpExchange(
         name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
         contextId = "SettingApi",
         fallbackFactory = SettingApiFallback.class)
@@ -54,10 +54,10 @@ public interface SettingApi {
      * @return 配置信息
      * @since 2022-03-25 14:10:22
      */
-    @GetMapping("/sys/feign/tools/setting")
+    @GetExchange("/sys/feign/tools/setting")
 	SettingApiResponse get(@RequestParam(value = "key") String key);
 
-    @GetMapping("/sys/feign/tools/setting/base")
+    @GetExchange("/sys/feign/tools/setting/base")
 	BaseSettingApiResponse getBaseSetting(@RequestParam(value = "name") String name);
 
     /**
@@ -67,30 +67,30 @@ public interface SettingApi {
      * @return {@link Result }<{@link GoodsSettingApiResponse }>
      * @since 2022-04-25 16:47:40
      */
-    @GetMapping("/sys/feign/tools/setting/goods")
+    @GetExchange("/sys/feign/tools/setting/goods")
 	GoodsSettingApiResponse getGoodsSetting(@RequestParam(value = "name") String name);
 
-    @GetMapping("/sys/feign/tools/setting/order")
+    @GetExchange("/sys/feign/tools/setting/order")
 	OrderSettingApiResponse getOrderSetting(@RequestParam(value = "name") String name);
 
-    @GetMapping("/sys/feign/tools/setting/experience")
+    @GetExchange("/sys/feign/tools/setting/experience")
 	ExperienceSettingApiResponse getExperienceSetting(@RequestParam(value = "name") String name);
 
-    @GetMapping("/sys/feign/tools/setting/point")
+    @GetExchange("/sys/feign/tools/setting/point")
 	PointSettingApiResponse getPointSetting(@RequestParam(value = "name") String name);
 
-    @GetMapping("/sys/feign/tools/setting/qq/connect")
+    @GetExchange("/sys/feign/tools/setting/qq/connect")
 	QQConnectSettingApiResponse getQQConnectSetting(@RequestParam(value = "name") String name);
 
-    @GetMapping("/sys/feign/tools/setting/wechat/connect")
+    @GetExchange("/sys/feign/tools/setting/wechat/connect")
 	WechatConnectSettingApiResponse getWechatConnectSetting(@RequestParam(value = "name") String name);
 
-    @GetMapping("/sys/feign/tools/setting/seckill")
+    @GetExchange("/sys/feign/tools/setting/seckill")
 	SeckillSettingApiResponse getSeckillSetting(@RequestParam(value = "name") String name);
 
-    @GetMapping("/sys/feign/tools/setting/ali")
+    @GetExchange("/sys/feign/tools/setting/ali")
 		AlipayPaymentSettingApiResponse getAlipayPaymentSetting(@RequestParam(value = "name") String name);
 
-    @GetMapping("/sys/feign/tools/setting/wechat")
+    @GetExchange("/sys/feign/tools/setting/wechat")
 	WechatPaymentSettingApiResponse getWechatPaymentSetting(@RequestParam(value = "name") String name);
 }

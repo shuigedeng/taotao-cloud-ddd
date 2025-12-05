@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.ddd.api.feign;
+package com.taotao.cloud.ddd.api.client;
 
 import com.taotao.boot.common.constant.ServiceNameConstants;
-import com.taotao.cloud.ddd.api.feign.fallback.RoleApiFallback;
-import com.taotao.cloud.ddd.api.feign.response.RoleQueryApiResponse;
+import com.taotao.cloud.ddd.api.client.fallback.RoleApiFallback;
+import com.taotao.cloud.ddd.api.client.response.RoleQueryApiResponse;
 import java.util.List;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.service.annotation.HttpExchange;
+import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @version 2022.03
  * @since 2022-03-25 14:09:31
  */
-@FeignClient(
+@HttpExchange(
         name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
         contextId = "RoleApi",
         fallbackFactory = RoleApiFallback.class)
@@ -44,6 +44,6 @@ public interface RoleApi {
      * @return 角色列表
      * @since 2020/10/21 15:13
      */
-    @GetMapping("/sys/feign/role/info/userId")
+    @GetExchange("/sys/feign/role/info/userId")
     List<RoleQueryApiResponse> findRoleByUserId(@RequestParam(value = "userId") Long userId);
 }

@@ -14,6 +14,6 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.ddd.api.feign.response;
+package com.taotao.cloud.ddd.api.client.response;
 
 public class LogsApiResponse {}

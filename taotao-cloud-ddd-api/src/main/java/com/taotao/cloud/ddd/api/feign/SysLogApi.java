@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.ddd.api.feign;
+package com.taotao.cloud.ddd.api.client;
 
 import com.taotao.boot.common.constant.ServiceNameConstants;
-import com.taotao.cloud.ddd.api.feign.fallback.SysLogApiFallback;
-import com.taotao.cloud.ddd.api.feign.request.SysLogApiRequest;
-import com.taotao.cloud.ddd.api.feign.response.LogsApiResponse;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PostMapping;
+import com.taotao.cloud.ddd.api.client.fallback.SysLogApiFallback;
+import com.taotao.cloud.ddd.api.client.request.SysLogApiRequest;
+import com.taotao.cloud.ddd.api.client.response.LogsApiResponse;
+import org.springframework.web.service.annotation.HttpExchange;
+import org.springframework.web.service.annotation.PostExchange;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(
+@HttpExchange(
         name = ServiceNameConstants.TAOTAO_CLOUD_LOG,
         contextId = "SysLogApi",
         fallbackFactory = SysLogApiFallback.class)
 public interface SysLogApi {
 
-    @PostMapping("/save")
+    @PostExchange("/save")
     // Response save(@RequestBody SysLog sysLog, @RequestHeader(AuthorizationConstants.FROM) String
     // from);
 	LogsApiResponse save(@RequestBody SysLogApiRequest sysLogApiRequest);

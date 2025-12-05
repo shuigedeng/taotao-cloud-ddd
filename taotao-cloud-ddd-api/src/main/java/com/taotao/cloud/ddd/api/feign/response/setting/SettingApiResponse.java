@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.ddd.api.feign.response.setting;
+package com.taotao.cloud.ddd.api.client.response.setting;
 
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;

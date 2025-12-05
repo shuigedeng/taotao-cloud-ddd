@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.ddd.api.feign;
+package com.taotao.cloud.ddd.api.client;
 
 
 import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
@@ -25,10 +25,10 @@ import com.taotao.boot.common.model.BaseSecurityUser;
 import com.taotao.boot.common.support.info.ApiInfo;
 import com.taotao.boot.common.support.info.Create;
 import com.taotao.boot.common.support.info.Update;
-import com.taotao.cloud.ddd.api.feign.fallback.UserApiFallback;
-import com.taotao.cloud.ddd.api.feign.response.UserQueryApiResponse;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.taotao.cloud.ddd.api.client.fallback.UserApiFallback;
+import com.taotao.cloud.ddd.api.client.response.UserQueryApiResponse;
+import org.springframework.web.service.annotation.HttpExchange;
+import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -37,7 +37,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author shuigedeng
  * @since 2020/5/2 16:42
  */
-@FeignClient(
+@HttpExchange(
 	name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
 	contextId = "UserApi",
 	fallbackFactory = UserApiFallback.class)
@@ -57,7 +57,7 @@ public interface UserApi {
 			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
 		}
 	)
-	@GetMapping(value = "/sys/feign/user/info/username")
+	@GetExchange(value = "/sys/feign/user/info/username")
 	UserQueryApiResponse findUserInfoByUsername(@RequestParam(value = "username") String username);
 
 	/**
@@ -75,7 +75,7 @@ public interface UserApi {
 			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
 		}
 	)
-	@GetMapping(
+	@GetExchange(
 		value = "/sys/feign/user/info/social/{social}",
 		headers = {"from=in"}
 	)
@@ -97,6 +97,6 @@ public interface UserApi {
 			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
 		}
 	)
-	@GetMapping(value = "/sys/feign/info/security")
+	@GetExchange(value = "/sys/feign/info/security")
 	BaseSecurityUser getSysSecurityUser(@RequestParam("nicknameOrUserNameOrPhoneOrEmail")  String nicknameOrUserNameOrPhoneOrEmail);
 }

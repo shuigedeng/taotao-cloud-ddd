@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.ddd.api.feign.fallback;
+package com.taotao.cloud.ddd.api.client.fallback;
 
 import com.taotao.boot.common.utils.log.LogUtils;
-import com.taotao.cloud.ddd.api.feign.RoleApi;
-import com.taotao.cloud.ddd.api.feign.response.RoleQueryApiResponse;
+import com.taotao.cloud.ddd.api.client.RoleApi;
+import com.taotao.cloud.ddd.api.client.response.RoleQueryApiResponse;
 import java.util.List;
 import org.springframework.cloud.openfeign.FallbackFactory;
 

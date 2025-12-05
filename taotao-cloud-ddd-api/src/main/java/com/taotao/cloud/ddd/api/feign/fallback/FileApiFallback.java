@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.ddd.api.feign.fallback;
+package com.taotao.cloud.ddd.api.client.fallback;
 
 import com.taotao.boot.common.utils.log.LogUtils;
-import com.taotao.cloud.ddd.api.feign.FileApi;
-import com.taotao.cloud.ddd.api.feign.response.FileApiResponse;
+import com.taotao.cloud.ddd.api.client.FileApi;
+import com.taotao.cloud.ddd.api.client.response.FileApiResponse;
 import org.apache.seata.core.exception.TransactionException;
 import org.apache.seata.tm.api.GlobalTransactionContext;
 import org.apache.seata.core.context.RootContext;

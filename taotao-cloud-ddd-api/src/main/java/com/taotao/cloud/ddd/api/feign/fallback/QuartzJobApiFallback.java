@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.ddd.api.feign.fallback;
+package com.taotao.cloud.ddd.api.client.fallback;
 
 import com.taotao.boot.common.utils.log.LogUtils;
-import com.taotao.cloud.ddd.api.feign.QuartzJobApi;
+import com.taotao.cloud.ddd.api.client.QuartzJobApi;
 import com.taotao.cloud.ddd.api.model.dto.QuartzJobDTO;
 import org.springframework.cloud.openfeign.FallbackFactory;
 
