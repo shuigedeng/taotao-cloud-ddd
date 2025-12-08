@@ -22,7 +22,7 @@ import com.taotao.cloud.ddd.facade.goods.vo.GoodsVO;
 import com.taotao.cloud.goods.api.dubbo.GoodsRpcService;
 import com.taotao.cloud.goods.api.dubbo.request.GoodsQueryRpcRequest;
 import com.taotao.cloud.goods.api.dubbo.response.GoodsQueryRpcResponse;
-import com.taotao.cloud.goods.api.client.GoodsApi;
+import com.taotao.cloud.goods.api.inner.GoodsApi;
 import com.taotao.cloud.goods.api.grpc.CountStoreGoodsNumGrpcResponse;
 import jakarta.annotation.Resource;
 import org.apache.dubbo.config.annotation.DubboReference;
