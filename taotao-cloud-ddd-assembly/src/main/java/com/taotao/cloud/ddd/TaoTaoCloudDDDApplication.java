@@ -72,7 +72,7 @@ public class TaoTaoCloudDDDApplication {
                 .setTtcBanner()
                 .setTtcProfileIfNotExists("dev")
                 .setTtcApplicationProperty("taotao-cloud-ddd")
-                .setTtcAllowBeanDefinitionOverriding(true)
+                .setTtcAllowBeanDefinitionOverriding(false)
                 .run(args);
     }
 }
