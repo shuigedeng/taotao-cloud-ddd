@@ -32,7 +32,7 @@ import io.micrometer.core.annotation.Timed;
 import io.micrometer.core.aop.MeterTag;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.apache.skywalking.apm.toolkit.trace.TraceContext;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -51,7 +51,7 @@ import java.sql.SQLIntegrityConstraintViolationException;
  * @since 2021-10-09 14:24:19
  */
 @Validated
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/sys/buyer/dict")
 @Tag(name = "pc端-字典API", description = "pc端-字典API")
