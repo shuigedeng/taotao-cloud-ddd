@@ -17,8 +17,8 @@
 package com.taotao.cloud.ddd.facade.sku.adapter;
 
 import com.taotao.cloud.ddd.facade.sku.vo.SkuVO;
-import com.taotao.cloud.goods.api.dubbo.response.GoodsQueryRpcResponse;
-import com.taotao.cloud.goods.api.inner.response.GoodsSkuSpecGalleryApiResponse;
+import com.taotao.cloud.goods.api.rpc.response.GoodsQueryRpcResponse;
+import com.taotao.cloud.goods.api.api.response.GoodsSkuSpecGalleryApiResponse;
 import com.taotao.cloud.goods.api.grpc.GoodsSkuGrpcResponse;
 import org.springframework.stereotype.Component;
 

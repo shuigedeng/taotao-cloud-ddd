@@ -17,7 +17,7 @@
 package com.taotao.cloud.ddd.facade.goods.adapter;
 
 import com.taotao.cloud.ddd.facade.goods.vo.GoodsVO;
-import com.taotao.cloud.goods.api.dubbo.response.GoodsQueryRpcResponse;
+import com.taotao.cloud.goods.api.rpc.response.GoodsQueryRpcResponse;
 import com.taotao.cloud.goods.api.grpc.CountStoreGoodsNumGrpcResponse;
 import org.springframework.stereotype.Component;
 
