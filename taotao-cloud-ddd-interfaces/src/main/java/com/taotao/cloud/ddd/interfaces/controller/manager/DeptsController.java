@@ -64,7 +64,7 @@ public class DeptsController extends BusinessController {
         return Result.success(true);
     }
 
-    @PutMapping
+    @PostMapping
     @Operation(summary = "部门管理", description = "修改菜单")
     @PreAuthorize("hasAuthority('depts:modify')")
     public Result<Boolean> modify(@RequestBody DeptModifyCmd cmd) {
@@ -78,7 +78,7 @@ public class DeptsController extends BusinessController {
         return Result.success(deptsService.findById(new DeptGetQry(id)));
     }
 
-    @DeleteMapping
+    @PostMapping
     @Operation(summary = "部门管理", description = "删除菜单")
     @PreAuthorize("hasAuthority('depts:remove')")
     public Result<Boolean> remove(@RequestBody Long[] ids) {
