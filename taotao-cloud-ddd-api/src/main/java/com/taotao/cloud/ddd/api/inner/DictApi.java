@@ -63,7 +63,7 @@ public interface DictApi {
 			@Caller(contacts = "李四", desc = "后台管理-字典管理-添加页面", sys = "后台管理", use = "查询字典")
 		})
 
-	@GetExchange("/sys/feign/dict/code")
+	@GetExchange("/sys/dict/code")
 	DictApiResponse findByCode(@RequestParam(value = "code") String code);
 
 	/**
@@ -79,6 +79,6 @@ public interface DictApi {
 			@Update(version = V2022_07, content = "主要修改了配置信息的接口查询", date = "2022-07-01 17:11:55"),
 			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
 		})
-	@GetExchange("/sys/feign/dict/code")
+	@GetExchange("/sys/dict/code")
 	DictApiResponse test(@RequestParam(value = "id") String id);
 }
