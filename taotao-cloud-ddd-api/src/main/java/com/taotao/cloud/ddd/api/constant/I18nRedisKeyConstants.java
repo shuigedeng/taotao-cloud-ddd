@@ -3,7 +3,7 @@ package com.taotao.cloud.ddd.api.constant;
 /**
  * 国际化使用到的 redis 缓存key
  *
- * @author hccake
+ * @author shuigedeng
  */
 public final class I18nRedisKeyConstants {
 
