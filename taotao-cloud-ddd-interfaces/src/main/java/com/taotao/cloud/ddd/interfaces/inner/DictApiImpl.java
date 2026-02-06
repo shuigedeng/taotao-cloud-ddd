@@ -22,7 +22,7 @@ import com.taotao.boot.idempotent.annotation.Idempotent;
 
 
 import com.taotao.boot.ratelimit.ratelimitguava.GuavaLimit;
-import com.taotao.boot.security.spring.support.annotation.NotAuth;
+import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.InnerController;
 import com.taotao.cloud.ddd.api.client.DictApi;

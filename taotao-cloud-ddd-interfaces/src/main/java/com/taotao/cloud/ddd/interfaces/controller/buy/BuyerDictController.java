@@ -18,7 +18,7 @@ package com.taotao.cloud.ddd.interfaces.controller.buy;
 
 import com.taotao.boot.common.model.result.Result;
 import com.taotao.boot.common.utils.log.LogUtils;
-import com.taotao.boot.security.spring.support.annotation.NotAuth;
+import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.webagg.controller.BusinessController;
 import com.taotao.cloud.ddd.application.command.dict.dto.DictGetQry;
 import com.taotao.cloud.ddd.application.command.dict.dto.clientobject.DictCO;
