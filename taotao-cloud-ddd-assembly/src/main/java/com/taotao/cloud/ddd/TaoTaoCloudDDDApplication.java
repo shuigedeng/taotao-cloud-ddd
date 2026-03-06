@@ -18,7 +18,6 @@ package com.taotao.cloud.ddd;
 
 import com.taotao.boot.core.startup.StartupSpringApplication;
 import com.taotao.boot.web.annotation.TaoTaoBootApplication;
-import com.taotao.cloud.bootstrap.annotation.TaoTaoCloudApplication;
 
 /**
  * 系统管理中心
@@ -62,7 +61,6 @@ import com.taotao.cloud.bootstrap.annotation.TaoTaoCloudApplication;
 //	"com.taotao.cloud.ddd.biz.repository.cls"
 // } )
 @TaoTaoBootApplication
-@TaoTaoCloudApplication
 public class TaoTaoCloudDDDApplication {
 
     public static void main(String[] args) {
