@@ -23,7 +23,7 @@ import lombok.experimental.Accessors;
 @Setter
 @Getter
 @ToString
-@Accessors(chain = true)
+
 public class AlipayPaymentSettingApiResponse {
 
     /** 应用id */
