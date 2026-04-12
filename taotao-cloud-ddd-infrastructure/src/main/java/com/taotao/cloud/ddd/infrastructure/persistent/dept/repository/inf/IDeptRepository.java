@@ -33,8 +33,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IDeptRepository extends BaseRepository<DeptPO> {
 
-    @Query("select d from DeptPO d where d.version <> ?1")
-    DeptPO findByVersionNot(Integer version);
+//    @Query("select d from DeptPO d where d.version <> ?1")
+//    DeptPO findByVersionNot(Integer version);
 
     @Query(
             value =
