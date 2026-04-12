@@ -18,7 +18,7 @@ package com.taotao.cloud.ddd.infrastructure.persistent.dict.po;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.taotao.boot.common.utils.log.LogUtils;
-import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.boot.webagg.entity.BasePO;
 import jakarta.annotation.PreDestroy;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -137,7 +137,7 @@ import org.hibernate.Hibernate;
 // @NamedQuery(name = "User.findByEmailAddress",
 //	query = "select u from User u where u.emailAddress = ?1")
 // @org.hibernate.annotations.Table(appliesTo = Dict.TABLE_NAME, comment = "字典表")
-public class DictPO extends BaseSuperEntity<DictPO, Long> {
+public class DictPO extends BasePO<DictPO> {
 
     public static final String TABLE_NAME = "ttc_dict";
 

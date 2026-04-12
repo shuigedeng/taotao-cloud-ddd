@@ -17,7 +17,7 @@
 package com.taotao.cloud.ddd.infrastructure.persistent.dept.po;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.boot.webagg.entity.BasePO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -47,7 +47,7 @@ import org.hibernate.Hibernate;
 @Table(name = DeptPO.TABLE_NAME)
 @TableName(DeptPO.TABLE_NAME)
 // @org.hibernate.annotations.Table(appliesTo = Dept.TABLE_NAME, comment = "后台部门表")
-public class DeptPO extends BaseSuperEntity<DeptPO, Long> {
+public class DeptPO extends BasePO<DeptPO> {
 
     public static final String TABLE_NAME = "ttc_dept";
 
