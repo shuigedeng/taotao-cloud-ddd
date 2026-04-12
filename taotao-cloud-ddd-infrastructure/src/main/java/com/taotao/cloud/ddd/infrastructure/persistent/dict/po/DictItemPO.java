@@ -32,7 +32,7 @@ import lombok.ToString;
 import org.hibernate.Hibernate;
 
 /**
- * 字典子项表 // @SQLDelete(sql = "update tt_dict_item set del_flag = 1 where id = ?") // @Where(clause
+ * 字典子项表 // @SQLDelete(sql = "update ttc_dict_item set del_flag = 1 where id = ?") // @Where(clause
  * ="del_flag = 1")
  *
  * @author shuigedeng
