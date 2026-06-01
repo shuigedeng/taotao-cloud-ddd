@@ -41,8 +41,8 @@ public class DictCO {
     @Schema(name = "remark", description = "字典备注")
     private String remark;
 
-    @Schema(name = "createDate", description = "创建时间")
-    private LocalDateTime createDate;
+    @Schema(name = "createTime", description = "创建时间")
+    private LocalDateTime createTime;
 
     @Schema(name = "sort", description = "字典排序")
     private Integer sort;
