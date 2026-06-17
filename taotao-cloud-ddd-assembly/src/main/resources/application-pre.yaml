@@ -215,7 +215,7 @@ dubbo:
     qos-accept-foreign-ip: false
     logger: slf4j
   cloud:
-    subscribed-services: taotao-cloud-order
+    subscribed-services: taotao-cloud-ddd
     registry-type: spring-cloud
   registry:
     address: nacos://127.0.0.1:8848
@@ -1218,7 +1218,7 @@ taotao:
         sign-name: sdfaslfd
         templates:
           ch: xlsldf
-        params-orders:
+        params-ddds:
           ch:
             - lsdkfjl
             - sdflksf
