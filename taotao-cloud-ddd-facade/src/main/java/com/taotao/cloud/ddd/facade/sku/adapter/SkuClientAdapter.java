@@ -25,6 +25,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class SkuClientAdapter {
 
+
+    /**
+     * 转换
+     *
+     * @param user 用户
+     * @param goodsQueryResponse 商品QueryResponse
+     * @param helloReply helloReply
+     * @return SKUVO
+     * @since 2022.03
+     */
+
     public SkuVO convert(
             GoodsSkuSpecGalleryApiResponse user,
             GoodsQueryRpcResponse goodsQueryResponse,

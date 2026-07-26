@@ -39,6 +39,14 @@ public class SkuGrpcClient {
     @Autowired
     private DiscoveryClient discoveryClient;
 
+    /**
+     * 获取
+     *
+     * @param name name
+     * @return GoodsSkuGrpcResponse
+     * @since 2022.03
+     */
+
     public GoodsSkuGrpcResponse getGoodsSkuByIdFromCache(String name) {
         try {
             final ServiceInstance instanceInfo =

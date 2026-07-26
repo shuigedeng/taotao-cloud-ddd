@@ -24,6 +24,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class GoodsClientAdapter {
 
+
+    /**
+     * 转换
+     *
+     * @param goodsNum 商品数量
+     * @param goods 商品
+     * @param countStoreGoodsNumResponse 数量StoreGoodsNumResponse
+     * @return 商品VO
+     * @since 2022.03
+     */
+
     public GoodsVO convert(
             Long goodsNum, GoodsQueryRpcResponse goods, CountStoreGoodsNumGrpcResponse countStoreGoodsNumResponse) {
         GoodsVO goodsVO = new GoodsVO();

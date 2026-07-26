@@ -45,6 +45,14 @@ public class GoodsClientProxy {
     private GoodsRpcService goodsRpcService;
 
     // 查询用户
+    /**
+     * 获取
+     *
+     * @param storeId storeId
+     * @return GoodsVO
+     * @since 2022.03
+     */
+
     public GoodsVO getGoodsVO(Long storeId) {
         //		Long goodsNum = goodsApi.countStoreGoodsNum(storeId);
         GoodsQueryRpcResponse goods = goodsRpcService.queryGoodsByParams(new GoodsQueryRpcRequest());

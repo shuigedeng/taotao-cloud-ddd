@@ -162,6 +162,26 @@ public class DictPO extends BasePO<DictPO> {
     private String remark;
 
     @Builder
+
+    /**
+     * 字典PO
+     *
+     * @param id ID
+     * @param createTime 创建时间
+     * @param createBy 创建人
+     * @param updateTime 更新时间
+     * @param updateBy 更新人
+     * @param version 版本
+     * @param delFlag 删除标识
+     * @param dictName 字典名称
+     * @param dictCode 字典编码
+     * @param description 描述
+     * @param sortNum 排序号
+     * @param remark 备注
+     * @return 无返回值
+     * @since 2022.03
+     */
+
     public DictPO(
             Long id,
             LocalDateTime createTime,

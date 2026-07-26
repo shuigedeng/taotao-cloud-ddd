@@ -37,5 +37,14 @@ public interface DeptConvertor {
      */
     DeptConvertor INSTANCE = Mappers.getMapper(DeptConvertor.class);
 
+
+    /**
+     * 转换
+     *
+     * @param deptEntity 部门Entity
+     * @return 部门PO
+     * @since 2022.03
+     */
+
     public DeptPO convert(DeptEntity deptEntity);
 }

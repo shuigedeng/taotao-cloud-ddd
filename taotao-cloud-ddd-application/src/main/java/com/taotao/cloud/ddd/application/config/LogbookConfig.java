@@ -32,6 +32,14 @@ import org.zalando.logbook.core.DefaultSink;
 public class LogbookConfig {
 
     @Bean
+
+    /**
+     * 日志book
+     *
+     * @return 日志book
+     * @since 2022.03
+     */
+
     public Logbook logbook() {
         return Logbook.builder()
                 .condition(Conditions.exclude(

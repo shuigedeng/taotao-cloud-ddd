@@ -42,6 +42,14 @@ public class SkuClientProxy {
     private GoodsRpcService goodsRpcService;
 
     // 查询用户
+    /**
+     * 获取
+     *
+     * @param skuId skuId
+     * @return SkuVO
+     * @since 2022.03
+     */
+
     public SkuVO getUserInfo(Long skuId) {
         //		GoodsSkuSpecGalleryApiResponse user = goodsSkuApi.getGoodsSkuByIdFromCache(skuId);
         GoodsQueryRpcResponse goodsQueryResponse = goodsRpcService.queryGoodsByParams(new GoodsQueryRpcRequest());

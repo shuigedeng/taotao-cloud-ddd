@@ -76,6 +76,14 @@ public class DictApiImpl extends InnerController implements DictApi {
     @GuavaLimit
     @SentinelResource("test")
     @GetMapping("/test")
+
+    /**
+     * test 方法
+     *
+     * @return 字典ApiResponse
+     * @since 2022.03
+     */
+
     public DictApiResponse test(@RequestParam(value = "id") String id) {
         LogUtils.info("sldfkslfdjalsdfkjalsfdjl");
         //		Dict dict = service().findByCode(id);

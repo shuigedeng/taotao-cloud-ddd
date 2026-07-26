@@ -56,12 +56,26 @@ public class PointSettingApiResponse implements Serializable {
 	 */
 	private List<PointSettingItemVO> pointSettingItems;
 
+	/**
+	 * 获取
+	 *
+	 * @return 结果数量
+	 * @since 2022.03
+	 */
+
 	public Integer getRegister() {
 		if (register == null || register < 0) {
 			return 0;
 		}
 		return register;
 	}
+
+	/**
+	 * 获取
+	 *
+	 * @return 结果数量
+	 * @since 2022.03
+	 */
 
 	public Integer getMoney() {
 		if (money == null || money < 0) {
@@ -70,6 +84,13 @@ public class PointSettingApiResponse implements Serializable {
 		return money;
 	}
 
+	/**
+	 * 获取
+	 *
+	 * @return 结果数量
+	 * @since 2022.03
+	 */
+
 	public Integer getConsumer() {
 		if (consumer == null || consumer < 0) {
 			return 0;
@@ -77,12 +98,26 @@ public class PointSettingApiResponse implements Serializable {
 		return consumer;
 	}
 
+	/**
+	 * 获取
+	 *
+	 * @return 结果数量
+	 * @since 2022.03
+	 */
+
 	public Integer getSignIn() {
 		if (signIn == null || signIn < 0) {
 			return 0;
 		}
 		return signIn;
 	}
+
+	/**
+	 * 获取
+	 *
+	 * @return 结果数量
+	 * @since 2022.03
+	 */
 
 	public Integer getComment() {
 		if (comment == null || comment < 0) {
@@ -112,12 +147,27 @@ public class PointSettingApiResponse implements Serializable {
 		 */
 		private Integer point;
 
+		/**
+		 * 获取
+		 *
+		 * @return 结果数量
+		 * @since 2022.03
+		 */
+
 		public Integer getPoint() {
 			if (point == null || point < 0) {
 				return 0;
 			}
 			return point;
 		}
+
+		/**
+		 * 设置
+		 *
+		 * @param point point
+		 * @return 无返回值
+		 * @since 2022.03
+		 */
 
 		public void setPoint(Integer point) {
 			this.point = point;

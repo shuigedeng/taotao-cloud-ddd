@@ -34,7 +34,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 /**
- * 远程调用后台用户模块
+ * 字典 API
+ * <p>提供字典相关的操作接口（远程调用）</p>
  *
  * @author shuigedeng
  * @since 2020/5/2 16:42

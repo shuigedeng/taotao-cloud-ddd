@@ -41,6 +41,15 @@ public class DeptCreateCmdExe {
         deptDomainService.create(convert(cmd.getDeptCO()));
     }
 
+
+    /**
+     * 转换
+     *
+     * @param deptCO 部门CO
+     * @return 部门Entity
+     * @since 2022.03
+     */
+
     private DeptEntity convert(DeptCO deptCO) {
         return null;
         //		return DeptEntity.builder()

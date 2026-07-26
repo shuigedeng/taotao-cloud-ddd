@@ -65,9 +65,24 @@ public class ScheduledJobDTO {
     @Schema(description = "秒", example = "1")
     private String secods;
 
+    /**
+     * 获取
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getId() {
         return id;
     }
+
+    /**
+     * 设置
+     *
+     * @param id id
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setId(String id) {
         this.id = id;
@@ -76,89 +91,254 @@ public class ScheduledJobDTO {
     // 备注
     private String remark;
 
+    /**
+     * 获取
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getRemark() {
         return remark;
     }
+
+    /**
+     * 设置
+     *
+     * @param remark remark
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setRemark(String remark) {
         this.remark = remark;
     }
 
+    /**
+     * 获取
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getName() {
         return name;
     }
+
+    /**
+     * 设置
+     *
+     * @param name name
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * 获取
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getInvokeTarget() {
         return invokeTarget;
     }
+
+    /**
+     * 设置
+     *
+     * @param invokeTarget invokeTarget
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setInvokeTarget(String invokeTarget) {
         this.invokeTarget = invokeTarget;
     }
 
+    /**
+     * 获取
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getCycle() {
         return cycle;
     }
+
+    /**
+     * 设置
+     *
+     * @param cycle cycle
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setCycle(String cycle) {
         this.cycle = cycle;
     }
 
+    /**
+     * 获取
+     *
+     * @return 结果数量
+     * @since 2022.03
+     */
+
     public Integer getPolicy() {
         return policy;
     }
+
+    /**
+     * 设置
+     *
+     * @param policy policy
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setPolicy(Integer policy) {
         this.policy = policy;
     }
 
+    /**
+     * 获取
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getWeek() {
         return week;
     }
+
+    /**
+     * 设置
+     *
+     * @param week week
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setWeek(String week) {
         this.week = week;
     }
 
+    /**
+     * 获取
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getMonth() {
         return month;
     }
+
+    /**
+     * 设置
+     *
+     * @param month month
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setMonth(String month) {
         this.month = month;
     }
 
+    /**
+     * 获取
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getDay() {
         return day;
     }
+
+    /**
+     * 设置
+     *
+     * @param day day
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setDay(String day) {
         this.day = day;
     }
 
+    /**
+     * 获取
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getHour() {
         return hour;
     }
+
+    /**
+     * 设置
+     *
+     * @param hour hour
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setHour(String hour) {
         this.hour = hour;
     }
 
+    /**
+     * 获取
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getMinute() {
         return minute;
     }
+
+    /**
+     * 设置
+     *
+     * @param minute minute
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setMinute(String minute) {
         this.minute = StringUtils.isBlank(minute) ? "0" : minute;
     }
 
+    /**
+     * 获取
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getSecods() {
         return secods;
     }
+
+    /**
+     * 设置
+     *
+     * @param secods secods
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setSecods(String secods) {
         this.secods = StringUtils.isBlank(secods) ? "0" : secods;

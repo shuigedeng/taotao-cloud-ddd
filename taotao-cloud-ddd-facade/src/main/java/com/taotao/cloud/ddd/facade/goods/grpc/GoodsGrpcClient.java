@@ -39,6 +39,15 @@ public class GoodsGrpcClient {
     @Autowired
     private DiscoveryClient discoveryClient;
 
+
+    /**
+     * 统计
+     *
+     * @param name 名称
+     * @return 数量StoreGoodsNumGrpcResponse
+     * @since 2022.03
+     */
+
     public CountStoreGoodsNumGrpcResponse countStoreGoodsNum(String name) {
         try {
             final ServiceInstance instanceInfo =
