@@ -63,7 +63,6 @@ import com.taotao.boot.web.annotation.TaoTaoBootApplication;
 @TaoTaoBootApplication
 public class TaoTaoCloudDDDApplication {
 
-
     /**
      * main 方法
      *
@@ -71,7 +70,6 @@ public class TaoTaoCloudDDDApplication {
      * @return 无返回值
      * @since 2022.03
      */
-
     public static void main(String[] args) {
         System.setProperty("arthas.outputPath", "${user.home}/logs/taotao-cloud-ddd/arthas-output");
 

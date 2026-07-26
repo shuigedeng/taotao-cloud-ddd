@@ -43,7 +43,6 @@ public class DeptGetQryExe {
         return convert(deptMapper.selectById(qry.getId()));
     }
 
-
     /**
      * 转换
      *
@@ -51,7 +50,6 @@ public class DeptGetQryExe {
      * @return 部门CO
      * @since 2022.03
      */
-
     private DeptCO convert(DeptPO deptDO) {
         //		return DeptCO.builder()
         //			.path(deptDO.getPath())

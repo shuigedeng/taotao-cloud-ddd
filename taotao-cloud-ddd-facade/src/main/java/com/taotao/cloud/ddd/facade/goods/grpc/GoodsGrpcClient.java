@@ -39,7 +39,6 @@ public class GoodsGrpcClient {
     @Autowired
     private DiscoveryClient discoveryClient;
 
-
     /**
      * 统计
      *
@@ -47,7 +46,6 @@ public class GoodsGrpcClient {
      * @return 数量StoreGoodsNumGrpcResponse
      * @since 2022.03
      */
-
     public CountStoreGoodsNumGrpcResponse countStoreGoodsNum(String name) {
         try {
             final ServiceInstance instanceInfo =

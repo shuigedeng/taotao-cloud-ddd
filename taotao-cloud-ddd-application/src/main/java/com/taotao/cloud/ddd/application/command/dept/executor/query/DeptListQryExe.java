@@ -58,7 +58,6 @@ public class DeptListQryExe {
         return new ArrayList<>();
     }
 
-
     /**
      * 转换
      *
@@ -66,7 +65,6 @@ public class DeptListQryExe {
      * @return 部门CO
      * @since 2022.03
      */
-
     private DeptCO convert(DeptPO deptPO) {
         return DeptCO.builder()
                 .id(deptPO.getId())

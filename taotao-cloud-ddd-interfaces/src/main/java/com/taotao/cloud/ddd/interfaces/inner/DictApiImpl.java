@@ -83,7 +83,6 @@ public class DictApiImpl extends InnerController implements DictApi {
      * @return 字典ApiResponse
      * @since 2022.03
      */
-
     public DictApiResponse test(@RequestParam(value = "id") String id) {
         LogUtils.info("sldfkslfdjalsdfkjalsfdjl");
         //		Dict dict = service().findByCode(id);

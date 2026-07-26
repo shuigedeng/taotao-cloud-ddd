@@ -47,7 +47,6 @@ public class DictRepository extends BaseClassSuperRepository<DictPO, Long> {
                 query.where(builder.equal(root.get("dictCode"), code)).getRestriction());
     }
 
-
     /**
      * 是否存在ByDictCode
      *
@@ -55,7 +54,6 @@ public class DictRepository extends BaseClassSuperRepository<DictPO, Long> {
      * @return 是否成功
      * @since 2022.03
      */
-
     public boolean existsByDictCode(String dictCode) {
         return false;
     }

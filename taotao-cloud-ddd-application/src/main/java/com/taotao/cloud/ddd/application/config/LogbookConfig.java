@@ -39,7 +39,6 @@ public class LogbookConfig {
      * @return 日志book
      * @since 2022.03
      */
-
     public Logbook logbook() {
         return Logbook.builder()
                 .condition(Conditions.exclude(

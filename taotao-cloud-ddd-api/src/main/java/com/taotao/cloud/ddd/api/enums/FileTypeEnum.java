@@ -43,11 +43,9 @@ public enum FileTypeEnum {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getDescription() {
         return description;
     }
-
 
     /**
      * 描述
@@ -55,7 +53,6 @@ public enum FileTypeEnum {
      * @return 字符串
      * @since 2022.03
      */
-
     public String description() {
         return this.description;
     }

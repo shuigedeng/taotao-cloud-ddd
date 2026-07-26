@@ -46,7 +46,6 @@ public class SkuGrpcClient {
      * @return GoodsSkuGrpcResponse
      * @since 2022.03
      */
-
     public GoodsSkuGrpcResponse getGoodsSkuByIdFromCache(String name) {
         try {
             final ServiceInstance instanceInfo =

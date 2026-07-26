@@ -71,7 +71,6 @@ public class ScheduledJobDTO {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getId() {
         return id;
     }
@@ -83,7 +82,6 @@ public class ScheduledJobDTO {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setId(String id) {
         this.id = id;
     }
@@ -97,7 +95,6 @@ public class ScheduledJobDTO {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getRemark() {
         return remark;
     }
@@ -109,7 +106,6 @@ public class ScheduledJobDTO {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setRemark(String remark) {
         this.remark = remark;
     }
@@ -120,7 +116,6 @@ public class ScheduledJobDTO {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getName() {
         return name;
     }
@@ -132,7 +127,6 @@ public class ScheduledJobDTO {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setName(String name) {
         this.name = name;
     }
@@ -143,7 +137,6 @@ public class ScheduledJobDTO {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getInvokeTarget() {
         return invokeTarget;
     }
@@ -155,7 +148,6 @@ public class ScheduledJobDTO {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setInvokeTarget(String invokeTarget) {
         this.invokeTarget = invokeTarget;
     }
@@ -166,7 +158,6 @@ public class ScheduledJobDTO {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getCycle() {
         return cycle;
     }
@@ -178,7 +169,6 @@ public class ScheduledJobDTO {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setCycle(String cycle) {
         this.cycle = cycle;
     }
@@ -189,7 +179,6 @@ public class ScheduledJobDTO {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getPolicy() {
         return policy;
     }
@@ -201,7 +190,6 @@ public class ScheduledJobDTO {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setPolicy(Integer policy) {
         this.policy = policy;
     }
@@ -212,7 +200,6 @@ public class ScheduledJobDTO {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getWeek() {
         return week;
     }
@@ -224,7 +211,6 @@ public class ScheduledJobDTO {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setWeek(String week) {
         this.week = week;
     }
@@ -235,7 +221,6 @@ public class ScheduledJobDTO {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getMonth() {
         return month;
     }
@@ -247,7 +232,6 @@ public class ScheduledJobDTO {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setMonth(String month) {
         this.month = month;
     }
@@ -258,7 +242,6 @@ public class ScheduledJobDTO {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getDay() {
         return day;
     }
@@ -270,7 +253,6 @@ public class ScheduledJobDTO {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setDay(String day) {
         this.day = day;
     }
@@ -281,7 +263,6 @@ public class ScheduledJobDTO {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getHour() {
         return hour;
     }
@@ -293,7 +274,6 @@ public class ScheduledJobDTO {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setHour(String hour) {
         this.hour = hour;
     }
@@ -304,7 +284,6 @@ public class ScheduledJobDTO {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getMinute() {
         return minute;
     }
@@ -316,7 +295,6 @@ public class ScheduledJobDTO {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setMinute(String minute) {
         this.minute = StringUtils.isBlank(minute) ? "0" : minute;
     }
@@ -327,7 +305,6 @@ public class ScheduledJobDTO {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getSecods() {
         return secods;
     }
@@ -339,7 +316,6 @@ public class ScheduledJobDTO {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSecods(String secods) {
         this.secods = StringUtils.isBlank(secods) ? "0" : secods;
     }

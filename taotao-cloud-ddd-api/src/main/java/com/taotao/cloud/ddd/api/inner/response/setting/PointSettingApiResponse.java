@@ -62,7 +62,6 @@ public class PointSettingApiResponse implements Serializable {
 	 * @return 结果数量
 	 * @since 2022.03
 	 */
-
 	public Integer getRegister() {
 		if (register == null || register < 0) {
 			return 0;
@@ -76,7 +75,6 @@ public class PointSettingApiResponse implements Serializable {
 	 * @return 结果数量
 	 * @since 2022.03
 	 */
-
 	public Integer getMoney() {
 		if (money == null || money < 0) {
 			return 0;
@@ -90,7 +88,6 @@ public class PointSettingApiResponse implements Serializable {
 	 * @return 结果数量
 	 * @since 2022.03
 	 */
-
 	public Integer getConsumer() {
 		if (consumer == null || consumer < 0) {
 			return 0;
@@ -104,7 +101,6 @@ public class PointSettingApiResponse implements Serializable {
 	 * @return 结果数量
 	 * @since 2022.03
 	 */
-
 	public Integer getSignIn() {
 		if (signIn == null || signIn < 0) {
 			return 0;
@@ -118,7 +114,6 @@ public class PointSettingApiResponse implements Serializable {
 	 * @return 结果数量
 	 * @since 2022.03
 	 */
-
 	public Integer getComment() {
 		if (comment == null || comment < 0) {
 			return 0;
@@ -153,7 +148,6 @@ public class PointSettingApiResponse implements Serializable {
 		 * @return 结果数量
 		 * @since 2022.03
 		 */
-
 		public Integer getPoint() {
 			if (point == null || point < 0) {
 				return 0;
@@ -168,7 +162,6 @@ public class PointSettingApiResponse implements Serializable {
 		 * @return 无返回值
 		 * @since 2022.03
 		 */
-
 		public void setPoint(Integer point) {
 			this.point = point;
 		}

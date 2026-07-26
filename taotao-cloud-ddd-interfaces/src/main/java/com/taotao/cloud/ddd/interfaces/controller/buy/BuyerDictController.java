@@ -73,7 +73,6 @@ public class BuyerDictController extends BusinessController {
      * @return Object
      * @since 2022.03
      */
-
     public Object tag(@MeterTag(key = "MeterDemoController#tag.name", expression = "#name") String name) {
         return "@MeterTag Annotation";
     }

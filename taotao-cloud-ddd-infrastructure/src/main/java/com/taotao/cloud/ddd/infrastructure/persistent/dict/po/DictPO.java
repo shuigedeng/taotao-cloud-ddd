@@ -181,7 +181,6 @@ public class DictPO extends BasePO<DictPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public DictPO(
             Long id,
             LocalDateTime createTime,
