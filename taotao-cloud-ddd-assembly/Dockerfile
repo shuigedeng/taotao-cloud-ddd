@@ -1,9 +1,9 @@
 FROM registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-openjdk25:latest as builder
 #FROM registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-graalvm25:latest as builder
 
-WORKDIR /root
+WORKDIR /builder
 
-ADD ./build/libs/taotao-cloud-ddd-2026.09.jar ./
+COPY ./build/libs/taotao-cloud-ddd-2026.09.jar ./
 
 #RUN java -Djarmode=layertools -jar taotao-cloud-ddd-2026.04.jar extract
 
@@ -112,4 +112,4 @@ RUN java -XX:ArchiveClassesAtExit=taotao-cloud-ddd.jsa -Dspring.context.exit=onR
 
 #ENTRYPOINT sleep 30; java ${CDS_JAVA_OPTIONS} -jar taotao-cloud-ddd-2026.04.jar
 
-ENTRYPOINT ["java", "${CDS_JAVA_OPTIONS}", "-jar", "taotao-cloud-monitor-2026.09.jar"]
+ENTRYPOINT ["sh", "-c", "exec java ${JAVA_OPTIONS} -jar taotao-cloud-sys-2026.09.jar"]
