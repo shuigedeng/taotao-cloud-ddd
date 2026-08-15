@@ -72,10 +72,6 @@ public class DictApiImpl extends InnerController implements DictApi {
             pattern = "{{}}",
             joint = ",",
             str = "nihao")
-    @Limit(key = "limitTest", period = 10, count = 3)
-    @GuavaLimit
-    @SentinelResource("test")
-    @GetMapping("/test")
 
     /**
      * test 方法
@@ -83,6 +79,10 @@ public class DictApiImpl extends InnerController implements DictApi {
      * @return 字典ApiResponse
      * @since 2022.03
      */
+    @Limit(key = "limitTest", period = 10, count = 3)
+    @GuavaLimit
+    @SentinelResource("test")
+    @GetMapping("/test")
     public DictApiResponse test(@RequestParam(value = "id") String id) {
         LogUtils.info("sldfkslfdjalsdfkjalsfdjl");
         //		Dict dict = service().findByCode(id);
@@ -102,3 +102,4 @@ public class DictApiImpl extends InnerController implements DictApi {
         // return IDictMapStruct.INSTANCE.dictToFeignDictRes(dict);
     }
 }
+

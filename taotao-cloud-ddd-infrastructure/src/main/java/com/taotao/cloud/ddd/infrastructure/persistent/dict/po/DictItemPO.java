@@ -39,13 +39,13 @@ import org.hibernate.Hibernate;
  * @version 2021.10
  * @since 2021-10-09 21:09:21
  */
+
+// @org.hibernate.annotations.Table(appliesTo = DictItem.TABLE_NAME, comment = "字典项表")
 @Getter
 @Setter
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-
-// @org.hibernate.annotations.Table(appliesTo = DictItem.TABLE_NAME, comment = "字典项表")
 @Entity
 @Table(name = DictItemPO.TABLE_NAME)
 @TableName(DictItemPO.TABLE_NAME)
@@ -122,3 +122,4 @@ public class DictItemPO extends BasePO<DictItemPO> {
         return getClass().hashCode();
     }
 }
+

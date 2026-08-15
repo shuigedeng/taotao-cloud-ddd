@@ -38,13 +38,13 @@ import org.hibernate.Hibernate;
  * @version 2021.10
  * @since 2021-10-09 21:10:22
  */
+
+// @org.hibernate.annotations.Table(appliesTo = Dept.TABLE_NAME, comment = "后台部门表")
 @Getter
 @Setter
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-
-// @org.hibernate.annotations.Table(appliesTo = Dept.TABLE_NAME, comment = "后台部门表")
 @Entity
 @Table(name = DeptPO.TABLE_NAME)
 @TableName(DeptPO.TABLE_NAME)
@@ -125,3 +125,4 @@ public class DeptPO extends BasePO<DeptPO> {
         return getClass().hashCode();
     }
 }
+

@@ -44,19 +44,16 @@ import org.springframework.messaging.handler.annotation.Payload;
 @Configuration
 public class RedissonDelayApplication {
 
-    @Bean
-
     /**
      * redissonQueue 方法
      *
      * @return RedissonQueue
      * @since 2022.03
      */
+    @Bean
     public RedissonQueue redissonQueue() {
         return new RedissonQueue("riven", true, null, new DefaultRedissonMessageConverter());
     }
-
-    @Bean("myMessageConverter")
 
     /**
      * 消息Converter
@@ -64,6 +61,7 @@ public class RedissonDelayApplication {
      * @return 消息Converter
      * @since 2022.03
      */
+    @Bean("myMessageConverter")
     public MessageConverter messageConverter() {
         return new MessageConverter() {
             @Override
@@ -83,8 +81,6 @@ public class RedissonDelayApplication {
         };
     }
 
-    @RedissonListener(queues = "riven", messageConverter = "myMessageConverter")
-
     /**
      * 处理
      *
@@ -93,6 +89,7 @@ public class RedissonDelayApplication {
      * @return 无返回值
      * @since 2022.03
      */
+    @RedissonListener(queues = "riven", messageConverter = "myMessageConverter")
     public void handler(
             @Header(value = RedissonHeaders.MESSAGE_ID, required = false) String messageId,
             @Header(RedissonHeaders.DELIVERY_QUEUE_NAME) String queue,
@@ -120,3 +117,4 @@ public class RedissonDelayApplication {
         private String carNum;
     }
 }
+

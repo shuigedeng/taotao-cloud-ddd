@@ -64,8 +64,6 @@ public class BuyerDictController extends BusinessController {
     private final GoodsApi goodsApi;
 
     // @MeterTag注解标准方法参数，key定义了显示时的名称，expression支持SpEL表达式，这里是获取当前参数name的值。
-    @Timed("MeterDemoController.tag")
-    @GetMapping("/tag")
 
     /**
      * 标签
@@ -73,6 +71,8 @@ public class BuyerDictController extends BusinessController {
      * @return Object
      * @since 2022.03
      */
+    @Timed("MeterDemoController.tag")
+    @GetMapping("/tag")
     public Object tag(@MeterTag(key = "MeterDemoController#tag.name", expression = "#name") String name) {
         return "@MeterTag Annotation";
     }
@@ -131,3 +131,4 @@ public class BuyerDictController extends BusinessController {
     //        return Result.success(service().testMybatisQueryStructure(dictQuery));
     //    }
 }
+

@@ -125,15 +125,15 @@ import org.hibernate.Hibernate;
  * @version 2021.10
  * @since 2021-10-09 21:10:04
  */
+
+// @NamedQuery(name = "User.findByEmailAddress",
+//	query = "select u from User u where u.emailAddress = ?1")
+// @org.hibernate.annotations.Table(appliesTo = Dict.TABLE_NAME, comment = "字典表")
 @Getter
 @Setter
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-
-// @NamedQuery(name = "User.findByEmailAddress",
-//	query = "select u from User u where u.emailAddress = ?1")
-// @org.hibernate.annotations.Table(appliesTo = Dict.TABLE_NAME, comment = "字典表")
 @Entity
 @Table(name = DictPO.TABLE_NAME)
 @TableName(DictPO.TABLE_NAME)
@@ -162,8 +162,6 @@ public class DictPO extends BasePO<DictPO> {
     @Column(name = "remark", columnDefinition = "varchar(255) comment '备注信息'")
     private String remark;
 
-    @Builder
-
     /**
      * 字典PO
      *
@@ -182,6 +180,7 @@ public class DictPO extends BasePO<DictPO> {
      * @return 无返回值
      * @since 2022.03
      */
+    @Builder
     public DictPO(
             Long id,
             LocalDateTime createTime,
@@ -318,3 +317,4 @@ public class DictPO extends BasePO<DictPO> {
         }
     }
 }
+
