@@ -62,8 +62,8 @@ public class DictApiImpl extends InnerController implements DictApi {
         return null;
     }
 
-    @Override
     @Operation(summary = "test", description = "test")
+    @Override
     @RequestLogger
     @NotAuth
     @Idempotent(perFix = "test")

@@ -43,10 +43,11 @@ import org.hibernate.Hibernate;
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
+
+// @org.hibernate.annotations.Table(appliesTo = Dept.TABLE_NAME, comment = "后台部门表")
 @Entity
 @Table(name = DeptPO.TABLE_NAME)
 @TableName(DeptPO.TABLE_NAME)
-// @org.hibernate.annotations.Table(appliesTo = Dept.TABLE_NAME, comment = "后台部门表")
 public class DeptPO extends BasePO<DeptPO> {
 
     public static final String TABLE_NAME = "ttc_dept";

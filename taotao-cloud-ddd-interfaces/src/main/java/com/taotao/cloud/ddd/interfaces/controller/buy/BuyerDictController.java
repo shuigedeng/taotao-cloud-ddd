@@ -81,12 +81,12 @@ public class BuyerDictController extends BusinessController {
     // MeterDemoController_pp_seconds_count：调用次数。
     // MeterDemoController_pp_seconds_sum：总计耗时（总次数时间合计）。
     // MeterDemoController_pp_seconds_max：最大耗时时长。
-    @Timed("BuyerDictController.pp")
     // 该注解用来统计方法调用成功与失败情况
+    @Operation(summary = "通过code查询所有字典列表")
+    @Timed("BuyerDictController.pp")
     @Counted("BuyerDictController.cc")
     @NotAuth
     @GetMapping("/add/{id}")
-    @Operation(summary = "通过code查询所有字典列表")
     public Result<Boolean> add(@PathVariable(value = "id") Long id) throws SQLIntegrityConstraintViolationException {
         //		Long result = goodsApi.countStoreGoodsNum(1L);
 
@@ -100,15 +100,15 @@ public class BuyerDictController extends BusinessController {
         return Result.success(false);
     }
 
+    @Operation(summary = "通过code查询所有字典列表")
     @NotAuth
     @GetMapping("/add1")
-    @Operation(summary = "通过code查询所有字典列表")
     public Result<Boolean> add1() {
         return Result.success(true);
     }
 
-    @GetMapping("/test/codexxxxx")
     @Operation(summary = "通过code查询所有字典列表")
+    @GetMapping("/test/codexxxxx")
     public Result<Boolean> testCode(@RequestParam String code) {
         // try {
         //	producerService.sendStringMsg();

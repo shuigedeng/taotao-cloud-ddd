@@ -130,13 +130,14 @@ import org.hibernate.Hibernate;
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
+
+// @NamedQuery(name = "User.findByEmailAddress",
+//	query = "select u from User u where u.emailAddress = ?1")
+// @org.hibernate.annotations.Table(appliesTo = Dict.TABLE_NAME, comment = "字典表")
 @Entity
 @Table(name = DictPO.TABLE_NAME)
 @TableName(DictPO.TABLE_NAME)
 @EntityListeners({DictPO.DictEntityListener.class})
-// @NamedQuery(name = "User.findByEmailAddress",
-//	query = "select u from User u where u.emailAddress = ?1")
-// @org.hibernate.annotations.Table(appliesTo = Dict.TABLE_NAME, comment = "字典表")
 public class DictPO extends BasePO<DictPO> {
 
     public static final String TABLE_NAME = "ttc_dict";

@@ -49,45 +49,45 @@ public class DeptsController extends BusinessController {
 
     private final DeptsService deptsService;
 
-    @PostMapping("list")
     @Operation(summary = "部门管理", description = "查询菜单列表")
+    @PostMapping("list")
     @PreAuthorize("hasAuthority('depts:list')")
     public Result<List<DeptCO>> findList(@RequestBody DeptListQry qry) {
         return Result.success(deptsService.findList(qry));
     }
 
-    @PostMapping
     @Operation(summary = "部门管理", description = "新增菜单")
+    @PostMapping
     @PreAuthorize("hasAuthority('depts:create')")
     public Result<Boolean> create(@RequestBody DeptCreateCmd cmd) {
         deptsService.create(cmd);
         return Result.success(true);
     }
 
-    @PostMapping
     @Operation(summary = "部门管理", description = "修改菜单")
+    @PostMapping
     @PreAuthorize("hasAuthority('depts:modify')")
     public Result<Boolean> modify(@RequestBody DeptModifyCmd cmd) {
         deptsService.modify(cmd);
         return Result.success(true);
     }
 
-    @GetMapping("{id}")
     @Operation(summary = "部门管理", description = "查看菜单")
+    @GetMapping("{id}")
     public Result<DeptCO> findById(@PathVariable("id") Long id) {
         return Result.success(deptsService.findById(new DeptGetQry(id)));
     }
 
-    @PostMapping
     @Operation(summary = "部门管理", description = "删除菜单")
+    @PostMapping
     @PreAuthorize("hasAuthority('depts:remove')")
     public Result<Boolean> remove(@RequestBody Long[] ids) {
         deptsService.remove(new DeptRemoveCmd(ids));
         return Result.success(true);
     }
 
-    @GetMapping("{roleId}/ids")
     @Operation(summary = "部门管理", description = "部门IDS")
+    @GetMapping("{roleId}/ids")
     public Result<List<Long>> findIds(@PathVariable("roleId") Long roleId) {
         return Result.success(deptsService.findIds(new DeptIdsGetQry(roleId)));
     }

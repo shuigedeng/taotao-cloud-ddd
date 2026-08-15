@@ -15,12 +15,12 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.TestPropertySource;
 
-@Setter
-@Getter
-@ToStringJpaTest
 //@Import({com.taotao.boot.security.spring.configuration.PropertiesAutoConfiguration.class,
 //	org.springframework.cache.support.NoOpCacheManager.class,
 //	org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties.class,})
+@Setter
+@Getter
+@ToStringJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @TestPropertySource(properties = {
 	"spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver",
