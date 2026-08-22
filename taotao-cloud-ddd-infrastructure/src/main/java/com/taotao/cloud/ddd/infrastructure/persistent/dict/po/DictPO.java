@@ -177,7 +177,6 @@ public class DictPO extends BasePO<DictPO> {
      * @param description 描述
      * @param sortNum 排序号
      * @param remark 备注
-     * @return 无返回值
      * @since 2022.03
      */
     @Builder

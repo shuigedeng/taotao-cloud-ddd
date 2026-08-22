@@ -159,7 +159,6 @@ public class PointSettingApiResponse implements Serializable {
 		 * 设置
 		 *
 		 * @param point point
-		 * @return 无返回值
 		 * @since 2022.03
 		 */
 		public void setPoint(Integer point) {

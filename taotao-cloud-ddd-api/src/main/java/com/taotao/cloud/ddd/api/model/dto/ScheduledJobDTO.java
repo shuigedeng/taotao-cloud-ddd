@@ -79,7 +79,6 @@ public class ScheduledJobDTO {
      * 设置
      *
      * @param id id
-     * @return 无返回值
      * @since 2022.03
      */
     public void setId(String id) {
@@ -103,7 +102,6 @@ public class ScheduledJobDTO {
      * 设置
      *
      * @param remark remark
-     * @return 无返回值
      * @since 2022.03
      */
     public void setRemark(String remark) {
@@ -124,7 +122,6 @@ public class ScheduledJobDTO {
      * 设置
      *
      * @param name name
-     * @return 无返回值
      * @since 2022.03
      */
     public void setName(String name) {
@@ -145,7 +142,6 @@ public class ScheduledJobDTO {
      * 设置
      *
      * @param invokeTarget invokeTarget
-     * @return 无返回值
      * @since 2022.03
      */
     public void setInvokeTarget(String invokeTarget) {
@@ -166,7 +162,6 @@ public class ScheduledJobDTO {
      * 设置
      *
      * @param cycle cycle
-     * @return 无返回值
      * @since 2022.03
      */
     public void setCycle(String cycle) {
@@ -187,7 +182,6 @@ public class ScheduledJobDTO {
      * 设置
      *
      * @param policy policy
-     * @return 无返回值
      * @since 2022.03
      */
     public void setPolicy(Integer policy) {
@@ -208,7 +202,6 @@ public class ScheduledJobDTO {
      * 设置
      *
      * @param week week
-     * @return 无返回值
      * @since 2022.03
      */
     public void setWeek(String week) {
@@ -229,7 +222,6 @@ public class ScheduledJobDTO {
      * 设置
      *
      * @param month month
-     * @return 无返回值
      * @since 2022.03
      */
     public void setMonth(String month) {
@@ -250,7 +242,6 @@ public class ScheduledJobDTO {
      * 设置
      *
      * @param day day
-     * @return 无返回值
      * @since 2022.03
      */
     public void setDay(String day) {
@@ -271,7 +262,6 @@ public class ScheduledJobDTO {
      * 设置
      *
      * @param hour hour
-     * @return 无返回值
      * @since 2022.03
      */
     public void setHour(String hour) {
@@ -292,7 +282,6 @@ public class ScheduledJobDTO {
      * 设置
      *
      * @param minute minute
-     * @return 无返回值
      * @since 2022.03
      */
     public void setMinute(String minute) {
@@ -313,7 +302,6 @@ public class ScheduledJobDTO {
      * 设置
      *
      * @param secods secods
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSecods(String secods) {
