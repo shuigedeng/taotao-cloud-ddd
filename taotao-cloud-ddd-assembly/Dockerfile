@@ -3,11 +3,11 @@ FROM registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-openjdk
 
 WORKDIR /builder
 
-COPY ./build/libs/taotao-cloud-ddd-2026.09.jar ./
+COPY ./build/libs/taotao-cloud-ddd-2026.10.jar ./
 
 #RUN java -Djarmode=layertools -jar taotao-cloud-ddd-2026.04.jar extract
 
-RUN java -Djarmode=tools -jar taotao-cloud-ddd-2026.09.jar extract --layers --destination extracted
+RUN java -Djarmode=tools -jar taotao-cloud-ddd-2026.10.jar extract --layers --destination extracted
 
 # FROM registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-skywalking:openjdk-17-8.6.0
 # FROM registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-openjdk25:amd64
@@ -17,7 +17,7 @@ FROM registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-openjdk
 ARG BACKEND_SERVICE=127.0.0.1:11800
 ARG AGENT_AUTHENTICATION=taotao-cloud
 ARG APP_NAME=taotao-cloud-ddd
-ARG APP_VERSION=2026.09
+ARG APP_VERSION=2026.10
 ARG JAR=${APP_NAME}-${VERSION}
 ARG JAR_NAME=${JAR}.jar
 ARG APP_PORT=33331
@@ -108,8 +108,8 @@ HEALTHCHECK --interval=120s --timeout=60s --retries=5 CMD curl -fs http://127.0.
 #cds
 #https://docs.spring.io/spring-boot/reference/packaging/class-data-sharing.html
 #https://docs.spring.io/spring-boot/reference/packaging/container-images/dockerfiles.html
-RUN java -XX:ArchiveClassesAtExit=taotao-cloud-ddd.jsa -Dspring.context.exit=onRefresh -jar taotao-cloud-ddd-2026.09.jar
+RUN java -XX:ArchiveClassesAtExit=taotao-cloud-ddd.jsa -Dspring.context.exit=onRefresh -jar taotao-cloud-ddd-2026.10.jar
 
 #ENTRYPOINT sleep 30; java ${CDS_JAVA_OPTIONS} -jar taotao-cloud-ddd-2026.04.jar
 
-ENTRYPOINT ["sh", "-c", "exec java ${JAVA_OPTIONS} -jar taotao-cloud-sys-2026.09.jar"]
+ENTRYPOINT ["sh", "-c", "exec java ${JAVA_OPTIONS} -jar taotao-cloud-sys-2026.10.jar"]
