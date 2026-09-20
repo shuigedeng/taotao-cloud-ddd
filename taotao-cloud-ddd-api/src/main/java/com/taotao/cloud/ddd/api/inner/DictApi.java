@@ -40,10 +40,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author shuigedeng
  * @since 2020/5/2 16:42
  */
-@HttpExchange(
-	contextId = "DictApi",
-	name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
-	fallbackFactory = DictApiFallback.class)
+@HttpExchange
 public interface DictApi {
 
 	/**

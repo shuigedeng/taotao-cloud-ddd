@@ -29,7 +29,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 2021.9
  * @since 2021-10-09 14:24:19
  */
-@Validated
 @RestController
 @RequestMapping("/sys/admin/dict")
 @Tag(name = "管理端-字典管理API", description = "管理端-字典管理API")

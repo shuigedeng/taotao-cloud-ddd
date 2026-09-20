@@ -37,10 +37,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author shuigedeng
  * @since 2020/5/2 16:42
  */
-@HttpExchange(
-	name = ServiceNameConstants.TAOTAO_CLOUD_FILE,
-	contextId = "FileApi",
-	fallbackFactory = FileApiFallback.class)
+@HttpExchange
 public interface FileApi {
 
 	/**

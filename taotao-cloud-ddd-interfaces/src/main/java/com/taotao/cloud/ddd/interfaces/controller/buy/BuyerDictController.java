@@ -50,7 +50,6 @@ import java.sql.SQLIntegrityConstraintViolationException;
  * @version 2021.9
  * @since 2021-10-09 14:24:19
  */
-@Validated
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/sys/buyer/dict")
