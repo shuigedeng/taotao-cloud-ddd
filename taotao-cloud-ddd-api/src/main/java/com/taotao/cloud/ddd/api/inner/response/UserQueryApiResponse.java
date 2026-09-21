@@ -37,7 +37,7 @@ import lombok.*;
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(description = "用户查询VO")
+@Schema(description = "用户查询响应对象")
 public class UserQueryApiResponse implements Serializable {
 
     @Serial

@@ -39,7 +39,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(description = "公司查询VO")
+@Schema(description = "公司查询响应对象")
 public class FileQueryVO implements Serializable {
 
     @Serial

@@ -33,7 +33,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(description = "商品配置VO")
+@Schema(description = "商品配置响应对象")
 public class GoodsSettingApiResponse implements Serializable {
 
     @Serial
