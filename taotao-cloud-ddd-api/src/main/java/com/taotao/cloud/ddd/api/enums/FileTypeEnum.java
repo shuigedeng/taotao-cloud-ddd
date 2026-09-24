@@ -37,7 +37,6 @@ public enum FileTypeEnum {
     }
 
     /**
-    /**
      * 获取
      *
      * @return 字符串
