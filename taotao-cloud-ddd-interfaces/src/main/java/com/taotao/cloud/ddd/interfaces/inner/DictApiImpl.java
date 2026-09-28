@@ -24,7 +24,7 @@ import com.taotao.boot.idempotent.annotation.Idempotent;
 import com.taotao.boot.ratelimit.ratelimitguava.GuavaLimit;
 import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.web.request.annotation.RequestLogger;
-import com.taotao.boot.webagg.controller.InnerController;
+import com.taotao.boot.webagg.controller.InternalController;
 import com.taotao.cloud.ddd.api.client.DictApi;
 import com.taotao.cloud.ddd.api.client.response.DictApiResponse;
 import com.yomahub.tlog.core.annotation.TLogAspect;
@@ -40,7 +40,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/sys/dict")
-public class DictApiImpl extends InnerController implements DictApi {
+public class DictApiImpl extends InternalController implements DictApi {
 
     @Override
     @NotAuth
