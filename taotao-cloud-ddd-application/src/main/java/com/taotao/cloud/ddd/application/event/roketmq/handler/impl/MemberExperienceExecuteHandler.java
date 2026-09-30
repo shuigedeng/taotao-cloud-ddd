@@ -25,13 +25,13 @@ public class MemberExperienceExecuteHandler implements MemberRegisterEventHandle
 
     //    /** 配置 */
     //    @Autowired
-    //    private IFeignSettingApi settingApi;
+    //    private AclServiceSettingApi settingApi;
     //    /** 会员 */
     //    @Autowired
     //    private IMemberService memberService;
     //    /** 订单 */
     //    @Autowired
-    //    private IFeignOrderApi orderApi;
+    //    private AclServiceOrderApi orderApi;
     //
     //    /**
     //     * 会员注册赠送经验值

@@ -24,7 +24,7 @@ import org.springframework.stereotype.Component;
 public class RegisteredCouponActivityExecute implements MemberRegisterEventHandler {
 
     //    @Autowired
-    //    private IFeignCouponActivityApi couponActivityService;
+    //    private AclServiceCouponActivityApi couponActivityService;
     //
     //    /**
     //     * 获取进行中的注册赠券的优惠券活动 发送注册赠券

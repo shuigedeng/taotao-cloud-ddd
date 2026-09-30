@@ -31,7 +31,7 @@
 //	}
 //
 ////    @Autowired
-////    private IFeignNoticeMessageApi noticeMessageService;
+////    private AclServiceNoticeMessageApi noticeMessageService;
 ////
 ////    @Override
 ////    public void memberPointChange(MemberPointMessageDTO memberPointMessageDTO) {
