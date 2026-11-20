@@ -65,7 +65,7 @@ dependencies {
 
 
     //boot
-    api "io.github.shuigedeng:taotao-boot-starter-apollo"
+    //api "io.github.shuigedeng:taotao-boot-starter-apollo"
     api "io.github.shuigedeng:taotao-boot-starter-dubbo"
     api "io.github.shuigedeng:taotao-boot-starter-eventbus"
     //api "io.github.shuigedeng:taotao-boot-starter-mq-pulsar"
